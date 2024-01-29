@@ -5,7 +5,7 @@ import img from "./image/image.png";
 export const Container = styled.div`
   font-family: "Noto Sans";
   width: 40%;
-  height: 78vh;
+  height: 70vh;
 
   @media (max-width: 768px) {
     width: 90%;
