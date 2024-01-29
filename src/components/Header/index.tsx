@@ -18,7 +18,7 @@ export function Header({ openInfoPopUp }: Props) {
           height={30}
         />
 
-        <Styled.Logo>Słuchaj.fun</Styled.Logo>
+        <Styled.Logo>Blue Archive</Styled.Logo>
         <a href="#"></a>
       </Styled.Content>
     </Styled.Container>

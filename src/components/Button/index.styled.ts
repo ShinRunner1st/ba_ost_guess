@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../constants";
+import "@fontsource/noto-sans";
 
 export const Button = styled.button<{ variant?: keyof typeof theme }>`
+  font-family: "Noto Sans";
   background-color: ${({ theme, variant }) =>
     variant ? theme[variant] : theme.background100};
 

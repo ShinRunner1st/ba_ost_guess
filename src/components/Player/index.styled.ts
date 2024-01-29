@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import "@fontsource/noto-sans";
 
 export const ProgressBackground = styled.div`
   position: relative;
-  z-index: -1;
 
   width: 100%;
   height: 20px;
@@ -44,5 +44,6 @@ export const TimeStamps = styled.div`
 `;
 
 export const TimeStamp = styled.p`
+  font-family: "Noto Sans";
   color: ${({ theme }) => theme.text};
 `;

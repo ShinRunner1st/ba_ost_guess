@@ -26,7 +26,7 @@ module.exports = {
     "no-confusing-arrow": [0],
     "no-prototype-builtins": [0],
 
-    "prettier/prettier": [2],
+    "prettier/prettier": ["warn", { endOfLine: "auto" }],
 
     "import/named": [0],
     "import/first": [0],

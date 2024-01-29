@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import "@fontsource/noto-sans";
 
 export const Container = styled.header`
+  font-family: "Noto Sans";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +13,13 @@ export const Container = styled.header`
   border-bottom-width: 0.5px;
   border-bottom-style: solid;
 
+  background-color: ${({ theme }) => theme.background100};
+
   margin-bottom: 15px;
 `;
 
 export const Content = styled.div`
+  font-family: "Noto Sans";
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -40,7 +45,7 @@ export const Content = styled.div`
 
 export const Logo = styled.h1`
   color: ${({ theme }) => theme.text};
-  font-family: "Roboto Serif", serif;
+  font-family: "Noto Sans";
   text-transform: uppercase;
   width: max-content;
 

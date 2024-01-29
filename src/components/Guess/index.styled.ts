@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import "@fontsource/noto-sans";
 
 export const Container = styled.div<{
   active: boolean;
   isCorrect: boolean | undefined;
 }>`
+  font-family: "Noto Sans";
   width: 100%;
   height: 45px;
 
@@ -24,11 +26,13 @@ export const Container = styled.div<{
   border-width: 1px;
   border-radius: 5px;
   border-style: solid;
+  background-color: ${({ theme }) => theme.background100};
 
   color: ${({ theme }) => theme.text};
 `;
 
 export const Text = styled.p`
+  font-family: "Noto Sans";
   width: 100%;
   height: max-content;
 

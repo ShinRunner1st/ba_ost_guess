@@ -57,7 +57,7 @@ function App() {
       });
     }
   }, []);
-
+  //set stats to current
   React.useEffect(() => {
     if (Array.isArray(stats)) {
       stats[stats.length - 1].currentTry = currentTry;
@@ -66,7 +66,6 @@ function App() {
     }
   }),
     [guesses, currentTry, didGuess];
-
   React.useEffect(() => {
     localStorage.setItem("stats", JSON.stringify(stats));
   }, [stats]);
@@ -77,7 +76,6 @@ function App() {
   const openInfoPopUp = React.useCallback(() => {
     setIsInfoPopUpOpen(true);
   }, []);
-
   const closeInfoPopUp = React.useCallback(() => {
     if (firstRun) {
       localStorage.setItem("firstRun", "false");
@@ -86,7 +84,6 @@ function App() {
       setIsInfoPopUpOpen(false);
     }
   }, [localStorage.getItem("firstRun")]);
-
   const skip = React.useCallback(() => {
     setGuesses((guesses: GuessType[]) => {
       const newGuesses = [...guesses];
@@ -106,12 +103,11 @@ function App() {
       action: "Skip",
     });
   }, [currentTry]);
-
   const guess = React.useCallback(() => {
     const isCorrect = selectedSong === todaysSolution;
 
     if (!selectedSong) {
-      alert("Wybierz piosenkę");
+      alert("Not Found");
       return;
     }
 
@@ -140,24 +136,25 @@ function App() {
       value: isCorrect ? 1 : 0,
     });
   }, [guesses, selectedSong]);
-
   return (
-    <main>
-      <Header openInfoPopUp={openInfoPopUp} />
-      {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
-      <Styled.Container>
-        <Game
-          guesses={guesses}
-          didGuess={didGuess}
-          todaysSolution={todaysSolution}
-          currentTry={currentTry}
-          setSelectedSong={setSelectedSong}
-          skip={skip}
-          guess={guess}
-        />
-      </Styled.Container>
-      <Footer />
-    </main>
+    <Styled.BG>
+      <main>
+        <Header openInfoPopUp={openInfoPopUp} />
+        {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
+        <Styled.Container>
+          <Game
+            guesses={guesses}
+            didGuess={didGuess}
+            todaysSolution={todaysSolution}
+            currentTry={currentTry}
+            setSelectedSong={setSelectedSong}
+            skip={skip}
+            guess={guess}
+          />
+        </Styled.Container>
+        <Footer />
+      </main>
+    </Styled.BG>
   );
 }
 

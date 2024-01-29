@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import "@fontsource/noto-sans";
 
 export const Container = styled.div`
+  font-family: "Noto Sans";
   position: relative;
 
   width: 100%;
@@ -9,6 +11,7 @@ export const Container = styled.div`
 `;
 
 export const SearchContainer = styled.div`
+  font-family: "Noto Sans";
   display: flex;
   align-items: center;
 
@@ -19,6 +22,8 @@ export const SearchContainer = styled.div`
   border-width: 1px;
   border-radius: 5px;
   border-style: solid;
+
+  background-color: ${({ theme }) => theme.background100};
 
   color: ${({ theme }) => theme.text};
 `;
@@ -33,6 +38,7 @@ export const SearchPadding = styled.div`
 `;
 
 export const Input = styled.input`
+  font-family: "Noto Sans";
   width: 100%;
   height: 100%;
   margin: 0 10px;
@@ -46,6 +52,7 @@ export const Input = styled.input`
 `;
 
 export const ResultsContainer = styled.div`
+  font-family: "Noto Sans";
   position: absolute;
   bottom: 50px;
   z-index: 1;
@@ -56,10 +63,11 @@ export const ResultsContainer = styled.div`
 
   width: 100%;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export const Result = styled.div`
+  font-family: "Noto Sans";
   padding: 1px 15px;
 
   background-color: ${({ theme }) => theme.background100};
@@ -75,6 +83,7 @@ export const Result = styled.div`
 `;
 
 export const ResultText = styled.p`
+  font-family: "Noto Sans";
   width: 100%;
 
   color: ${({ theme }) => theme.text};
