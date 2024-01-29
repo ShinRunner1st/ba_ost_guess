@@ -38,12 +38,7 @@ export function Result({
   ];
 
   const stats = JSON.parse(localStorage.getItem("stats") || "{}");
-  let Currect;
-  if (Array.isArray(stats)) {
-    Currect = stats.filter((x) => {
-      return x.didGuess == true;
-    });
-  } else Currect = [];
+  let Currect = [];
 
   if (didGuess) {
     const copyResult = React.useCallback(() => {
@@ -52,6 +47,12 @@ export function Result({
 
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
 
+    if (Array.isArray(stats)) {
+      Currect = stats.filter((x) => {
+        return x.didGuess == true;
+      });
+    } else Currect = [];
+
     return (
       <>
         <Styled.ResultTitle>{textForTry[currentTry - 1]}</Styled.ResultTitle>
@@ -59,8 +60,8 @@ export function Result({
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
         <Styled.Tries>
-          You got it right in {currentTry} {triesConjugation}. Score :{" "}
-          {Currect.length}/{stats.length}
+          You got it right in {currentTry} {triesConjugation}. [ Score :{" "}
+          {Currect.length + 1}/{stats.length} ]
         </Styled.Tries>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
@@ -81,6 +82,11 @@ export function Result({
       </>
     );
   } else {
+    if (Array.isArray(stats)) {
+      Currect = stats.filter((x) => {
+        return x.didGuess == true;
+      });
+    } else Currect = [];
     return (
       <>
         <Styled.ResultTitle>Fail</Styled.ResultTitle>
@@ -88,7 +94,7 @@ export function Result({
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
         <Styled.Tries>
-          You are Noob. Score : {Currect.length}/{stats.length}
+          You are Noob. [ Score : {Currect.length}/{stats.length} ]
         </Styled.Tries>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>

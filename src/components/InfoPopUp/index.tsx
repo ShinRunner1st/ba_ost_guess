@@ -16,15 +16,29 @@ export function InfoPopUp({ onClose }: Props) {
         <Styled.Spacer />
         <Styled.Section>
           <IoMusicalNoteOutline size={70} />
-          <p>Blue Archive SoundTrack</p>
+          <p>Blue Archive OST</p>
         </Styled.Section>
         <Styled.Section>
           <IoHelpCircleOutline size={50} />
           <p>Check back for a new song every day!</p>
         </Styled.Section>
-        <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
-          Close
-        </Button>
+        <Styled.Section>
+          <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
+            Close
+          </Button>
+          {localStorage.getItem("stats") !== null && (
+            <Button
+              variant="red"
+              style={{ marginTop: 20 }}
+              onClick={() => {
+                localStorage.removeItem("stats");
+                window.location.reload();
+              }}
+            >
+              Reset Score
+            </Button>
+          )}
+        </Styled.Section>
       </Styled.PopUp>
     </Styled.Container>
   );

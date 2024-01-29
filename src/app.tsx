@@ -66,6 +66,7 @@ function App() {
     }
   }),
     [guesses, currentTry, didGuess];
+
   React.useEffect(() => {
     localStorage.setItem("stats", JSON.stringify(stats));
   }, [stats]);
