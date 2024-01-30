@@ -4,6 +4,7 @@ export const theme = {
 
   text: "#FFFFFF",
   background100: "#634832",
+  background1: "#38220f",
 
   green: "#4DBB60",
   red: "#FF0000",

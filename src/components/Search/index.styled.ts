@@ -23,7 +23,7 @@ export const SearchContainer = styled.div`
   border-radius: 5px;
   border-style: solid;
 
-  background-color: ${({ theme }) => theme.background100};
+  background-color: ${({ theme }) => theme.background1};
 
   color: ${({ theme }) => theme.text};
 `;
@@ -70,7 +70,7 @@ export const Result = styled.div`
   font-family: "Noto Sans";
   padding: 1px 15px;
 
-  background-color: ${({ theme }) => theme.background100};
+  background-color: ${({ theme }) => theme.background1};
 
   border-color: ${({ theme }) => theme.border};
   border-width: 1px;
