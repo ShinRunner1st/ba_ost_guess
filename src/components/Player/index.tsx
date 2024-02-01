@@ -1,6 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
-import { IoPlay } from "react-icons/io5";
+import { IoPause, IoPlay } from "react-icons/io5";
 import { event } from "react-ga";
 
 import { playTimes } from "../../constants";
@@ -52,13 +52,23 @@ export function Player({ id, currentTry }: Props) {
 
   // don't call play video each time currentTime changes
   const startPlayback = React.useCallback(() => {
-    playerRef.current?.internalPlayer.playVideo();
-    setPlay(true);
-    event({
-      category: "Player",
-      action: "Played song",
-    });
+    if (!play) {
+      playerRef.current?.internalPlayer.playVideo();
+      setPlay(true);
+      event({
+        category: "Player",
+        action: "Played song",
+      });
+    }
   }, []);
+
+  const pasuePlayback = React.useCallback(() => {
+    if (play) {
+      playerRef.current?.internalPlayer.pauseVideo();
+      playerRef.current?.internalPlayer.seekTo(0);
+      setPlay(false);
+    }
+  }, [play, currentTime]);
 
   const setReady = React.useCallback(() => {
     setIsReady(true);
@@ -82,12 +92,21 @@ export function Player({ id, currentTry }: Props) {
             <Styled.TimeStamp>1s</Styled.TimeStamp>
             <Styled.TimeStamp>16s</Styled.TimeStamp>
           </Styled.TimeStamps>
-          <IoPlay
-            style={{ cursor: "pointer" }}
-            size={40}
-            color="#fff"
-            onClick={startPlayback}
-          />
+          {!play ? (
+            <IoPlay
+              style={{ cursor: "pointer" }}
+              size={40}
+              color="#fff"
+              onClick={startPlayback}
+            />
+          ) : (
+            <IoPause
+              style={{ cursor: "pointer" }}
+              size={40}
+              color="#fff"
+              onClick={pasuePlayback}
+            />
+          )}
         </>
       ) : (
         <p>Loading player...</p>

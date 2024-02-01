@@ -7,12 +7,16 @@ import { Button } from "../Button";
 import { YouTube } from "../YouTube";
 
 import * as Styled from "./index.styled";
+import { selectRandomElement } from "../../helpers/randomNewSong";
+import { songs } from "../../constants";
 
 interface Props {
   didGuess: boolean;
   currentTry: number;
   todaysSolution: Song;
   guesses: GuessType[];
+  correctRecent: string;
+  totalsGuesses: number;
 }
 
 export function Result({
@@ -20,14 +24,16 @@ export function Result({
   todaysSolution,
   guesses,
   currentTry,
+  correctRecent,
+  totalsGuesses,
 }: Props) {
-  const hoursToNextDay = Math.floor(
-    (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
-      new Date().getTime()) /
-      1000 /
-      60 /
-      60
-  );
+  // const hoursToNextDay = Math.floor(
+  //   (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
+  //     new Date().getTime()) /
+  //     1000 /
+  //     60 /
+  //     60
+  // );
 
   const textForTry = [
     "Wow!",
@@ -37,21 +43,12 @@ export function Result({
     "That was close...",
   ];
 
-  const stats = JSON.parse(localStorage.getItem("stats") || "{}");
-  let Currect = [];
-
   if (didGuess) {
     const copyResult = React.useCallback(() => {
       navigator.clipboard.writeText(scoreToEmoji(guesses));
     }, [guesses]);
 
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
-
-    if (Array.isArray(stats)) {
-      Currect = stats.filter((x) => {
-        return x.didGuess == true;
-      });
-    } else Currect = [];
 
     return (
       <>
@@ -60,16 +57,20 @@ export function Result({
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
         <Styled.Tries>
-          You got it right in {currentTry} {triesConjugation}. [ Score :{" "}
-          {Currect.length + 1}/{stats.length} ]
+          {songs.length == totalsGuesses && "This is last song and"} You got it
+          right in {currentTry} {triesConjugation}.
         </Styled.Tries>
+        <Styled.Score>Score : {correctRecent}</Styled.Score>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
             Copy Result
           </Button>
           <Button
-            onClick={() => window.location.reload()}
+            onClick={() => {
+              selectRandomElement();
+              window.location.reload();
+            }}
             variant="red"
             style={{ marginLeft: "25px" }}
           >
@@ -82,11 +83,6 @@ export function Result({
       </>
     );
   } else {
-    if (Array.isArray(stats)) {
-      Currect = stats.filter((x) => {
-        return x.didGuess == true;
-      });
-    } else Currect = [];
     return (
       <>
         <Styled.ResultTitle>Fail</Styled.ResultTitle>
@@ -94,11 +90,20 @@ export function Result({
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
         <Styled.Tries>
-          You are Noob. [ Score : {Currect.length}/{stats.length} ]
+          {songs.length == totalsGuesses && "This is sast song and"} You are
+          Noob.
         </Styled.Tries>
+        <Styled.Score>Score : {correctRecent}</Styled.Score>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
-          <Button onClick={() => window.location.reload()} variant="red">
+          <Button
+            onClick={() => {
+              selectRandomElement();
+              window.location.reload();
+            }}
+            variant="red"
+            style={{ marginLeft: "25px" }}
+          >
             Try Again
           </Button>
         </Styled.Buttons>

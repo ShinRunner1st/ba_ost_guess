@@ -11,6 +11,7 @@ import { todaysSolution } from "./helpers";
 import { Header, InfoPopUp, Game, Footer } from "./components";
 
 import * as Styled from "./app.styled";
+import { calRecentCorrect } from "./helpers/calRecentCorrect";
 
 function App() {
   const initialGuess = {
@@ -25,6 +26,8 @@ function App() {
   const [currentTry, setCurrentTry] = React.useState<number>(0);
   const [selectedSong, setSelectedSong] = React.useState<Song>();
   const [didGuess, setDidGuess] = React.useState<boolean>(false);
+  const [correctRecent, setCorrectRecent] = React.useState<string>("");
+  const [totalsGuesses, setTotalsGuesses] = React.useState<number>(0);
 
   const firstRun = localStorage.getItem("firstRun") === null;
   let stats = JSON.parse(localStorage.getItem("stats") || "{}");
@@ -69,6 +72,8 @@ function App() {
 
   React.useEffect(() => {
     localStorage.setItem("stats", JSON.stringify(stats));
+    setCorrectRecent(calRecentCorrect(stats));
+    setTotalsGuesses(stats.length);
   }, [stats]);
 
   const [isInfoPopUpOpen, setIsInfoPopUpOpen] =
@@ -151,6 +156,8 @@ function App() {
             setSelectedSong={setSelectedSong}
             skip={skip}
             guess={guess}
+            correctRecent={correctRecent}
+            totalsGuesses={totalsGuesses}
           />
         </Styled.Container>
         <Footer />

@@ -39,6 +39,7 @@ export const TimeStamps = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-shadow: #000000 1px 0 10px;
 
   width: 100%;
 `;
