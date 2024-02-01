@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Song } from "../../types/song";
 import { GuessType } from "../../types/guess";
 import { scoreToEmoji } from "../../helpers";
@@ -34,7 +34,7 @@ export function Result({
   //     60 /
   //     60
   // );
-
+  const [buttonText, setButtonText] = useState("Copy Result");
   const textForTry = [
     "Wow!",
     "Im impressed.",
@@ -43,11 +43,15 @@ export function Result({
     "That was close...",
   ];
 
-  if (didGuess) {
-    const copyResult = React.useCallback(() => {
-      navigator.clipboard.writeText(scoreToEmoji(guesses));
-    }, [guesses]);
+  const copyResult = React.useCallback(() => {
+    navigator.clipboard.writeText(scoreToEmoji(guesses));
+    setButtonText("Copied to your clipboard");
+    setTimeout(() => {
+      setButtonText("Copy Result");
+    }, 2000);
+  }, [guesses]);
 
+  if (didGuess) {
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
 
     return (
@@ -64,7 +68,7 @@ export function Result({
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
-            Copy Result
+            {buttonText}
           </Button>
           <Button
             onClick={() => {
@@ -96,6 +100,9 @@ export function Result({
         <Styled.Score>Score : {correctRecent}</Styled.Score>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
+          <Button onClick={copyResult} variant="green">
+            {buttonText}
+          </Button>
           <Button
             onClick={() => {
               selectRandomElement();

@@ -8,7 +8,8 @@ export function scoreToEmoji(guesses: GuessType[]): string {
     empty: "⬛️",
   };
   const todaysDate = new Date();
-  const prefix = `Blue Archive OST - ${todaysDate.toLocaleDateString()} 🎧`;
+  const prefix = `Blue Archive OST - ${todaysDate.toLocaleDateString()}`;
+  const urlLink = "https://ba-ost-guess.vercel.app/";
 
   let scoreEmoji = "";
 
@@ -24,5 +25,5 @@ export function scoreToEmoji(guesses: GuessType[]): string {
     }
   });
 
-  return `${prefix} ${scoreEmoji}`;
+  return `${prefix}\n🎧${scoreEmoji}\n${urlLink}`;
 }
