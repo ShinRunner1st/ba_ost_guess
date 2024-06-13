@@ -9,6 +9,7 @@ export const CorrectResultTitle = styled.h1`
     text-align: center;
     width: 100%;
   }
+  margin-top: 10%;
 `;
 
 export const FailResultTitle = styled.h1`
@@ -19,6 +20,7 @@ export const FailResultTitle = styled.h1`
     text-align: center;
     width: 100%;
   }
+  margin-top: 10%;
 `;
 
 export const Tries = styled.h4`
@@ -65,7 +67,7 @@ export const TimeToNext = styled.h4`
 
 export const Buttons = styled.div`
   font-family: "Noto Sans";
-  margin-top: 5%;
+
   display: flex;
   justify-content: center;
   width: 100%;

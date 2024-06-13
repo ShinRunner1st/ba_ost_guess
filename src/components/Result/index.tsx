@@ -79,7 +79,7 @@ export function Result({
               window.location.reload();
             }}
             variant="red"
-            style={{ marginLeft: "25px" }}
+            style={{ marginLeft: "50px" }}
           >
             Next Song
           </Button>
