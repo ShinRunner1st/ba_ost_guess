@@ -1,8 +1,19 @@
 import styled from "styled-components";
 import "@fontsource/noto-sans";
 
-export const ResultTitle = styled.h1`
+export const CorrectResultTitle = styled.h1`
   font-family: "Noto Sans";
+  color: lightgreen;
+  text-shadow: #000000 1px 0 10px;
+  @media (max-width: 768px) {
+    text-align: center;
+    width: 100%;
+  }
+`;
+
+export const FailResultTitle = styled.h1`
+  font-family: "Noto Sans";
+  color: red;
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
     text-align: center;
@@ -21,15 +32,16 @@ export const Tries = styled.h4`
   margin-top: 0;
 `;
 
-export const SongTitle = styled.h3`
+export const SongTitle = styled.h2`
   font-family: "Noto Sans";
+  color: lightblue;
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
     text-align: center;
     width: 100%;
   }
 
-  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export const Score = styled.h4`

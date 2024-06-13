@@ -1,6 +1,6 @@
 import React from "react";
 import YouTube from "react-youtube";
-import { IoPause, IoPlay } from "react-icons/io5";
+import { IoPauseCircle, IoPlayCircle } from "react-icons/io5";
 import { event } from "react-ga";
 
 import { playTimes } from "../../constants";
@@ -89,20 +89,37 @@ export function Player({ id, currentTry }: Props) {
             ))}
           </Styled.ProgressBackground>
           <Styled.TimeStamps>
-            <Styled.TimeStamp>1s</Styled.TimeStamp>
+            <Styled.TimeStamp>0s</Styled.TimeStamp>
+            <Styled.TimeStamp />
+            <Styled.TimeStamp>2s</Styled.TimeStamp>
+            <Styled.TimeStamp />
+            <Styled.TimeStamp>4s</Styled.TimeStamp>
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp>7s</Styled.TimeStamp>
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp>11s</Styled.TimeStamp>
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
+            <Styled.TimeStamp />
             <Styled.TimeStamp>16s</Styled.TimeStamp>
           </Styled.TimeStamps>
           {!play ? (
-            <IoPlay
+            <IoPlayCircle
               style={{ cursor: "pointer" }}
-              size={40}
+              size={70}
               color="#fff"
               onClick={startPlayback}
             />
           ) : (
-            <IoPause
+            <IoPauseCircle
               style={{ cursor: "pointer" }}
-              size={40}
+              size={70}
               color="#fff"
               onClick={pasuePlayback}
             />

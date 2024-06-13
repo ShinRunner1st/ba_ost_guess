@@ -9,7 +9,7 @@ const initialGuess = {
 } as GuessType;
 
 const guesses = <GuessType[]>(
-  (Array.from({ length: 5 }).fill(initialGuess) as GuessType[])
+  (Array.from({ length: 6 }).fill(initialGuess) as GuessType[])
 );
 
 const operation = (list1: Song[], list2: Song[], isUnion = false) =>

@@ -20,10 +20,10 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   font-family: "Noto Sans";
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 
   width: 40%;
 
@@ -46,7 +46,7 @@ export const Content = styled.div`
 export const Logo = styled.h1`
   color: ${({ theme }) => theme.text};
   font-family: "Noto Sans";
-  text-transform: uppercase;
+  text-shadow: #000000 1px 0 10px;
   width: max-content;
 
   -webkit-touch-callout: none;

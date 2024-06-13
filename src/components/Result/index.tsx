@@ -34,8 +34,9 @@ export function Result({
   //     60 /
   //     60
   // );
-  const [buttonText, setButtonText] = useState("Copy Result");
+  const [buttonText, setButtonText] = useState("Copy Score");
   const textForTry = [
+    "OMG! 😭",
     "Wow!",
     "Im impressed.",
     "Not bad.",
@@ -44,27 +45,29 @@ export function Result({
   ];
 
   const copyResult = React.useCallback(() => {
-    navigator.clipboard.writeText(scoreToEmoji(guesses));
+    navigator.clipboard.writeText(scoreToEmoji(guesses, correctRecent));
     setButtonText("Copied to your clipboard");
     setTimeout(() => {
-      setButtonText("Copy Result");
+      setButtonText("Copy Score");
     }, 2000);
-  }, [guesses]);
+  }, [guesses, correctRecent]);
 
   if (didGuess) {
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
 
     return (
       <>
-        <Styled.ResultTitle>{textForTry[currentTry - 1]}</Styled.ResultTitle>
-        <Styled.SongTitle>
-          {todaysSolution.artist} - {todaysSolution.name}
-        </Styled.SongTitle>
+        <Styled.CorrectResultTitle>
+          {textForTry[currentTry - 1]}
+        </Styled.CorrectResultTitle>
         <Styled.Tries>
           {songs.length == totalsGuesses && "This is last song and"} You got it
           right in {currentTry} {triesConjugation}.
         </Styled.Tries>
         <Styled.Score>Score : {correctRecent}</Styled.Score>
+        <Styled.SongTitle>
+          {todaysSolution.artist} - {todaysSolution.name}
+        </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
@@ -78,7 +81,7 @@ export function Result({
             variant="red"
             style={{ marginLeft: "25px" }}
           >
-            Try Again
+            Next Song
           </Button>
         </Styled.Buttons>
         {/* <Styled.TimeToNext>
@@ -89,15 +92,15 @@ export function Result({
   } else {
     return (
       <>
-        <Styled.ResultTitle>Fail</Styled.ResultTitle>
-        <Styled.SongTitle>
-          {todaysSolution.artist} - {todaysSolution.name}
-        </Styled.SongTitle>
+        <Styled.FailResultTitle>Fail</Styled.FailResultTitle>
         <Styled.Tries>
-          {songs.length == totalsGuesses && "This is sast song and"} You are
+          {songs.length == totalsGuesses && "This is last song and"} You are
           Noob.
         </Styled.Tries>
         <Styled.Score>Score : {correctRecent}</Styled.Score>
+        <Styled.SongTitle>
+          {todaysSolution.artist} - {todaysSolution.name}
+        </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
@@ -111,7 +114,7 @@ export function Result({
             variant="red"
             style={{ marginLeft: "25px" }}
           >
-            Try Again
+            Continue?
           </Button>
         </Styled.Buttons>
         {/* <Styled.TimeToNext>

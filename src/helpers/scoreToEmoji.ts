@@ -1,6 +1,9 @@
 import { GuessType } from "../types/guess";
 
-export function scoreToEmoji(guesses: GuessType[]): string {
+export function scoreToEmoji(
+  guesses: GuessType[],
+  correctRecent: string
+): string {
   const emojis = {
     incorrect: "🟥",
     correct: "🟩",
@@ -10,6 +13,7 @@ export function scoreToEmoji(guesses: GuessType[]): string {
   const todaysDate = new Date();
   const prefix = `Blue Archive OST - ${todaysDate.toLocaleDateString()}`;
   const urlLink = "https://ba-ost-guess.vercel.app/";
+  const scoreStats = correctRecent;
 
   let scoreEmoji = "";
 
@@ -25,5 +29,5 @@ export function scoreToEmoji(guesses: GuessType[]): string {
     }
   });
 
-  return `${prefix}\n🎧${scoreEmoji}\n${urlLink}`;
+  return `${prefix}\nScore : ${scoreStats}\n🎧${scoreEmoji}\n${urlLink}`;
 }

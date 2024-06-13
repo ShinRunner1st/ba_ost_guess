@@ -5,7 +5,7 @@ import img from "./image/image.png";
 export const Container = styled.div`
   font-family: "Noto Sans";
   width: 40%;
-  height: 70vh;
+  height: 78vh;
 
   @media (max-width: 768px) {
     width: 90%;
@@ -24,10 +24,13 @@ export const Container = styled.div`
 export const BG = styled.div`
   background-image: url(${img});
   height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
   margin: 0 auto;
 `;

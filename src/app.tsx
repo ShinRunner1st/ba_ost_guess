@@ -6,12 +6,11 @@ import _ from "lodash";
 import { Song } from "./types/song";
 import { GuessType } from "./types/guess";
 
-import { todaysSolution } from "./helpers";
+import { todaysSolution, calRecentCorrect, calStats } from "./helpers";
 
-import { Header, InfoPopUp, Game, Footer } from "./components";
+import { Header, InfoPopUp, Game, Footer, StatsPopUp } from "./components";
 
 import * as Styled from "./app.styled";
-import { calRecentCorrect } from "./helpers/calRecentCorrect";
 
 function App() {
   const initialGuess = {
@@ -21,13 +20,14 @@ function App() {
   } as GuessType;
 
   const [guesses, setGuesses] = React.useState<GuessType[]>(
-    Array.from({ length: 5 }).fill(initialGuess) as GuessType[]
+    Array.from({ length: 6 }).fill(initialGuess) as GuessType[]
   );
   const [currentTry, setCurrentTry] = React.useState<number>(0);
   const [selectedSong, setSelectedSong] = React.useState<Song>();
   const [didGuess, setDidGuess] = React.useState<boolean>(false);
   const [correctRecent, setCorrectRecent] = React.useState<string>("");
   const [totalsGuesses, setTotalsGuesses] = React.useState<number>(0);
+  const [calStat, setCalStat] = React.useState([0, 0, 0, 0, 0, 0, 0]);
 
   const firstRun = localStorage.getItem("firstRun") === null;
   let stats = JSON.parse(localStorage.getItem("stats") || "{}");
@@ -76,6 +76,10 @@ function App() {
     setTotalsGuesses(stats.length);
   }, [stats]);
 
+  React.useEffect(() => {
+    setCalStat(calStats(stats));
+  }, [currentTry]);
+
   const [isInfoPopUpOpen, setIsInfoPopUpOpen] =
     React.useState<boolean>(firstRun);
 
@@ -90,6 +94,18 @@ function App() {
       setIsInfoPopUpOpen(false);
     }
   }, [localStorage.getItem("firstRun")]);
+
+  //idk
+  const [isStatsPopUpOpen, setIsStatsPopUpOpen] =
+    React.useState<boolean>(false);
+
+  const openStatsPopUp = React.useCallback(() => {
+    setIsStatsPopUpOpen(true);
+  }, []);
+  const closeStatsPopUp = React.useCallback(() => {
+    setIsStatsPopUpOpen(false);
+  }, []);
+
   const skip = React.useCallback(() => {
     setGuesses((guesses: GuessType[]) => {
       const newGuesses = [...guesses];
@@ -109,7 +125,9 @@ function App() {
       action: "Skip",
     });
   }, [currentTry]);
+
   const guess = React.useCallback(() => {
+    setCalStat(calStats(stats));
     const isCorrect = selectedSong === todaysSolution;
 
     if (!selectedSong) {
@@ -144,24 +162,29 @@ function App() {
   }, [guesses, selectedSong]);
   return (
     <Styled.BG>
-      <main>
-        <Header openInfoPopUp={openInfoPopUp} />
-        {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
-        <Styled.Container>
-          <Game
-            guesses={guesses}
-            didGuess={didGuess}
-            todaysSolution={todaysSolution}
-            currentTry={currentTry}
-            setSelectedSong={setSelectedSong}
-            skip={skip}
-            guess={guess}
-            correctRecent={correctRecent}
-            totalsGuesses={totalsGuesses}
-          />
-        </Styled.Container>
-        <Footer />
-      </main>
+      <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} />
+      {isStatsPopUpOpen && (
+        <StatsPopUp
+          onClose={closeStatsPopUp}
+          correctRecent={correctRecent}
+          Stats={calStat}
+        />
+      )}
+      {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
+      <Styled.Container>
+        <Game
+          guesses={guesses}
+          didGuess={didGuess}
+          todaysSolution={todaysSolution}
+          currentTry={currentTry}
+          setSelectedSong={setSelectedSong}
+          skip={skip}
+          guess={guess}
+          correctRecent={correctRecent}
+          totalsGuesses={totalsGuesses}
+        />
+      </Styled.Container>
+      <Footer />
     </Styled.BG>
   );
 }

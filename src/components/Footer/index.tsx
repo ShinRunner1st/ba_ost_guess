@@ -5,10 +5,8 @@ import * as Styled from "./index.styled";
 
 export function Footer() {
   return (
-    <footer>
-      <Styled.Text>
-        Made with <IoHeart /> by ShinRunner1st
-      </Styled.Text>
-    </footer>
+    <Styled.Text>
+      Made with <IoHeart /> by ShinRunner1st
+    </Styled.Text>
   );
 }

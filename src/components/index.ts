@@ -8,3 +8,4 @@ export { Player } from "./Player";
 export { Result } from "./Result";
 export { Search } from "./Search";
 export { YouTube } from "./YouTube";
+export { StatsPopUp } from "./StatsPopUp";
