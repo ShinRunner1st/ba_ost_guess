@@ -80,6 +80,9 @@ export const Result = styled.div`
   color: ${({ theme }) => theme.text};
 
   cursor: pointer;
+  &:hover {
+    background-color: ${({ theme }) => theme.background100};
+  }
 `;
 
 export const ResultText = styled.p`
@@ -90,8 +93,4 @@ export const ResultText = styled.p`
   font-size: 0.9rem;
 
   user-select: none;
-
-  &:hover {
-    opacity: 0.8;
-  }
 `;
