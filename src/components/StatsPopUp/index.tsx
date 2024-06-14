@@ -38,9 +38,14 @@ export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
             {Stats[5]}
           </Styled.Section>
           <Styled.Section>
-            X |
-            <Styled.BadProgress value={Stats[6]} maxValue={Stats[7]} />
+            6 |
+            <Styled.Progress value={Stats[6]} maxValue={Stats[7]} />
             {Stats[6]}
+          </Styled.Section>
+          <Styled.Section>
+            X |
+            <Styled.BadProgress value={Stats[0]} maxValue={Stats[7]} />
+            {Stats[0]}
           </Styled.Section>
         </div>
         <Styled.Spacer />
