@@ -51,11 +51,11 @@ export const Section = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: space-between;
 
   a {
     color: ${({ theme }) => theme.text};
   }
+  margin-top: 5%;
 `;
 
 export const Contact = styled.p`
@@ -67,4 +67,30 @@ export const Contact = styled.p`
   font-size: 0.9rem;
   font-weight: bold;
   opacity: 0.5;
+`;
+
+export const Progress = styled.div<{ value: number; maxValue: number }>`
+  width: ${({ value, maxValue }) => (value / maxValue) * 100}%;
+  height: 20px;
+
+  align-self: flex-start;
+
+  background-color: ${({ theme }) => theme.green};
+
+  border-radius: 2px;
+
+  transition: width 0.5s;
+`;
+
+export const BadProgress = styled.div<{ value: number; maxValue: number }>`
+  width: ${({ value, maxValue }) => (value / maxValue) * 100}%;
+  height: 20px;
+
+  align-self: flex-start;
+
+  background-color: ${({ theme }) => theme.red};
+
+  border-radius: 2px;
+
+  transition: width 0.5s;
 `;

@@ -27,7 +27,7 @@ function App() {
   const [didGuess, setDidGuess] = React.useState<boolean>(false);
   const [correctRecent, setCorrectRecent] = React.useState<string>("");
   const [totalsGuesses, setTotalsGuesses] = React.useState<number>(0);
-  const [calStat, setCalStat] = React.useState([0, 0, 0, 0, 0, 0, 0]);
+  const [calStat, setCalStat] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
 
   const firstRun = localStorage.getItem("firstRun") === null;
   let stats = JSON.parse(localStorage.getItem("stats") || "{}");

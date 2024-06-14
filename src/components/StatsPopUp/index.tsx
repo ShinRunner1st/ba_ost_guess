@@ -16,14 +16,33 @@ export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
       <Styled.PopUp>
         <h1>Stats</h1>
         <Styled.Spacer />
-        <h3>
-          <Styled.Section>1 : {Stats[1]}</Styled.Section>
-          <Styled.Section>2 : {Stats[2]}</Styled.Section>
-          <Styled.Section>3 : {Stats[3]}</Styled.Section>
-          <Styled.Section>4 : {Stats[4]}</Styled.Section>
-          <Styled.Section>5 : {Stats[5]}</Styled.Section>
-          <Styled.Section>Fail : {Stats[6]}</Styled.Section>
-        </h3>
+        <div style={{ width: 300 }}>
+          <Styled.Section>
+            1 | <Styled.Progress value={Stats[1]} maxValue={Stats[7]} />
+            {Stats[1]}
+          </Styled.Section>
+          <Styled.Section>
+            2 | <Styled.Progress value={Stats[2]} maxValue={Stats[7]} />
+            {Stats[2]}
+          </Styled.Section>
+          <Styled.Section>
+            3 | <Styled.Progress value={Stats[3]} maxValue={Stats[7]} />
+            {Stats[3]}
+          </Styled.Section>
+          <Styled.Section>
+            4 | <Styled.Progress value={Stats[4]} maxValue={Stats[7]} />
+            {Stats[4]}
+          </Styled.Section>
+          <Styled.Section>
+            5 | <Styled.Progress value={Stats[5]} maxValue={Stats[7]} />
+            {Stats[5]}
+          </Styled.Section>
+          <Styled.Section>
+            X |
+            <Styled.BadProgress value={Stats[6]} maxValue={Stats[7]} />
+            {Stats[6]}
+          </Styled.Section>
+        </div>
         <Styled.Spacer />
         <h3>
           <Styled.Section>Score : {correctRecent}</Styled.Section>
