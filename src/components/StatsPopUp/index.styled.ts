@@ -70,7 +70,7 @@ export const Contact = styled.p`
 `;
 
 export const Progress = styled.div<{ value: number; maxValue: number }>`
-  width: ${({ value, maxValue }) => (value / maxValue) * 100}%;
+  width: ${({ value, maxValue }) => (value / maxValue) * 75}%;
   height: 20px;
 
   align-self: flex-start;
@@ -83,7 +83,7 @@ export const Progress = styled.div<{ value: number; maxValue: number }>`
 `;
 
 export const BadProgress = styled.div<{ value: number; maxValue: number }>`
-  width: ${({ value, maxValue }) => (value / maxValue) * 100}%;
+  width: ${({ value, maxValue }) => (value / maxValue) * 75}%;
   height: 20px;
 
   align-self: flex-start;
