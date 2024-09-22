@@ -1182,7 +1182,7 @@ export const songs = [
     themeNo: "214",
   },
   {
-    artist: "Unknown",
+    artist: "KARUT",
     name: "Theme 202",
     youtubeId: "lu0a5pj8rUg",
     themeNo: "202",
