@@ -1208,7 +1208,7 @@ export const songs = [
   {
     artist: "YUC'e",
     name: "Ramune Lagoon",
-    youtubeId: "-rv1lxp_Xufs",
+    youtubeId: "rv1lxp_Xufs",
     themeNo: "204",
   },
   {
