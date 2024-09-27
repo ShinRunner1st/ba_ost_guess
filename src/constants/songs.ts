@@ -1093,7 +1093,7 @@ export const songs = [
   },
   {
     artist: "Unknown",
-    name: "Theme 208",
+    name: "Shoujo Delight",
     youtubeId: "NQPtBQhtTYQ",
     themeNo: "208",
   },
@@ -1171,7 +1171,7 @@ export const songs = [
   },
   {
     artist: "Mitsukiyo",
-    name: "Theme 180",
+    name: "Irodoricanvas",
     youtubeId: "m744roAczb4",
     themeNo: "180",
   },
@@ -1261,7 +1261,7 @@ export const songs = [
   },
   {
     artist: "Unknown",
-    name: "Theme 223",
+    name: "Scarlet Chrysanthemum",
     youtubeId: "9a_e1191O-o",
     themeNo: "223",
   },
@@ -1270,5 +1270,11 @@ export const songs = [
     name: "Theme 197",
     youtubeId: "W4KPhd8Incc",
     themeNo: "197",
+  },
+  {
+    artist: "Synthion",
+    name: "Theme 224",
+    youtubeId: "FXujDNyQ7gU",
+    themeNo: "224",
   },
 ];
