@@ -1141,13 +1141,13 @@ export const songs = [
   },
   {
     artist: "Nor",
-    name: "Theme 207",
+    name: "HIGH5LANDER",
     youtubeId: "6ITgnMiM2DU",
     themeNo: "207",
   },
   {
     artist: "Mitsukiyo",
-    name: "Future",
+    name: "Bluemark Canvas",
     youtubeId: "2mNAmP73qac",
     themeNo: "189",
   },
@@ -1273,7 +1273,7 @@ export const songs = [
   },
   {
     artist: "Synthion",
-    name: "Theme 224",
+    name: "Flip Flap Festival!",
     youtubeId: "FXujDNyQ7gU",
     themeNo: "224",
   },
@@ -1292,7 +1292,43 @@ export const songs = [
   {
     artist: "Unknown",
     name: "Theme 233",
-    youtubeId: "oc6dMaH_E_g",
+    youtubeId: "z_vEwtQUjlc",
     themeNo: "233",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 226",
+    youtubeId: "8leTKCXsa4Y",
+    themeNo: "226",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 240",
+    youtubeId: "NJddhV0FpxA",
+    themeNo: "240",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 242",
+    youtubeId: "n1_8YzRMslM",
+    themeNo: "242",
+  },
+  {
+    artist: "Nor",
+    name: "トモダチOneStep",
+    youtubeId: "XV_X1lq5sfI",
+    themeNo: "185",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 239",
+    youtubeId: "ZDY8EmG-dW4",
+    themeNo: "239",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 241",
+    youtubeId: "Jcn3k4EaUk4",
+    themeNo: "241",
   },
 ];
