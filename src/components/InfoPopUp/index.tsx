@@ -39,6 +39,9 @@ export function InfoPopUp({ onClose }: Props) {
           </a>
         </Styled.Section>
         <Styled.Section>
+          <p>Last Update 28/10/2024</p>
+        </Styled.Section>
+        <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
             Close
           </Button>
