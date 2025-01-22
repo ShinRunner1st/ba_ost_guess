@@ -18,6 +18,9 @@ export function YouTube({ id }: Props) {
             playsinline: 1,
           },
         }}
+        onReady={(event) => {
+          event.target.setVolume(20);
+        }}
       />
     </div>
   );

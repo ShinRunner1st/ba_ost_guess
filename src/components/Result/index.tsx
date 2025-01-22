@@ -81,7 +81,8 @@ export function Result({
             variant="red"
             style={{ marginLeft: "50px" }}
           >
-            Next Song
+            {songs.length == totalsGuesses && "Reset Score"}
+            {songs.length != totalsGuesses && "Next Song"}
           </Button>
         </Styled.Buttons>
         {/* <Styled.TimeToNext>
@@ -114,7 +115,8 @@ export function Result({
             variant="red"
             style={{ marginLeft: "25px" }}
           >
-            Continue?
+            {songs.length == totalsGuesses && "Reset Score"}
+            {songs.length != totalsGuesses && "Continue?"}
           </Button>
         </Styled.Buttons>
         {/* <Styled.TimeToNext>

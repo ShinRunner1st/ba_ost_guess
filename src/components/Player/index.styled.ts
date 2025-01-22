@@ -48,3 +48,18 @@ export const TimeStamp = styled.p`
   font-family: "Noto Sans";
   color: ${({ theme }) => theme.text};
 `;
+
+export const StyledYouTube = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures it's behind other content */
+`;
+
+export const Overlay = styled.div`
+  position: relative;
+  z-index: 1; /* Keeps it in front of the YouTube player */
+  /* Add your overlay styling here */
+`;

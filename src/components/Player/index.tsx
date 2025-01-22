@@ -14,8 +14,13 @@ interface Props {
 
 export function Player({ id, currentTry }: Props) {
   const opts = {
-    width: "0",
-    height: "0",
+    width: "0", // Set width to 0
+    height: "0", // Set height to 0
+    playerVars: {
+      controls: 0, // Hide the controls
+      modestbranding: 1, // Minimize branding
+      rel: 0, // Disable related videos
+    },
   };
 
   // react-youtube doesn't export types for this
@@ -30,6 +35,8 @@ export function Player({ id, currentTry }: Props) {
 
   const [isReady, setIsReady] = React.useState<boolean>(false);
 
+  const [startTime, setStartTime] = React.useState<number>(0);
+
   React.useEffect(() => {
     setInterval(() => {
       playerRef.current?.internalPlayer
@@ -42,13 +49,14 @@ export function Player({ id, currentTry }: Props) {
 
   React.useEffect(() => {
     if (play) {
-      if (currentTime * 1000 >= currentPlayTime) {
+      if ((currentTime - startTime) * 1000 >= currentPlayTime) {
         playerRef.current?.internalPlayer.pauseVideo();
-        playerRef.current?.internalPlayer.seekTo(0);
+        playerRef.current?.internalPlayer.seekTo(startTime);
+        setCurrentTime(startTime);
         setPlay(false);
       }
     }
-  }, [play, currentTime]);
+  }, [play, currentTime, startTime]);
 
   // don't call play video each time currentTime changes
   const startPlayback = React.useCallback(() => {
@@ -65,22 +73,64 @@ export function Player({ id, currentTry }: Props) {
   const pasuePlayback = React.useCallback(() => {
     if (play) {
       playerRef.current?.internalPlayer.pauseVideo();
-      playerRef.current?.internalPlayer.seekTo(0);
+      playerRef.current?.internalPlayer.seekTo(startTime);
+      setCurrentTime(startTime);
       setPlay(false);
     }
-  }, [play, currentTime]);
+  }, [play, currentTime, startTime]);
 
-  const setReady = React.useCallback(() => {
-    setIsReady(true);
-  }, []);
+  // const setReady = React.useCallback((event) => {
+  //   const duration = event.target.getDuration(); // Get video duration in seconds
+  //   if (duration > 0) {
+  //     let randomTime = Math.floor(Math.random() * duration); // Generate a random time in seconds
+  //     if (randomTime + playTimes[5] / 1000 > duration) {
+  //       randomTime = duration - playTimes[5] / 1000;
+  //     }
+  //     playerRef.current?.internalPlayer.seekTo(randomTime);
+  //     setStartTime(randomTime);
+  //   }
+  //   playerRef.current?.internalPlayer.pauseVideo();
+  //   playerRef.current?.internalPlayer.setVolume(20);
+  //   setIsReady(true);
+  // }, []);
 
   return (
     <>
-      <YouTube opts={opts} videoId={id} onReady={setReady} ref={playerRef} />
+      <Styled.StyledYouTube>
+        <YouTube
+          opts={{
+            width: "1",
+            height: "1",
+            playerVars: {
+              controls: 0, // Hide the controls
+              modestbranding: 1, // Minimize branding
+              rel: 0, // Disable related videos
+            },
+          }}
+          videoId={id}
+          onReady={(event) => {
+            const duration = event.target.getDuration(); // Get video duration in seconds
+            if (duration > 0) {
+              let randomTime = Math.floor(Math.random() * duration); // Generate a random time in seconds
+              if (randomTime + playTimes[5] / 1000 > duration) {
+                randomTime = duration - playTimes[5] / 1000;
+              }
+              playerRef.current?.internalPlayer.seekTo(randomTime);
+              setStartTime(randomTime);
+            }
+            playerRef.current?.internalPlayer.pauseVideo();
+            event.target.setVolume(20);
+            setIsReady(true);
+          }}
+          ref={playerRef}
+        />
+      </Styled.StyledYouTube>
       {isReady ? (
         <>
           <Styled.ProgressBackground>
-            {currentTime !== 0 && <Styled.Progress value={currentTime} />}
+            {currentTime !== 0 && (
+              <Styled.Progress value={currentTime - startTime} />
+            )}
             {playTimes.map((playTime) => (
               <Styled.Separator
                 style={{ left: `${(playTime / 16000) * 100}%` }}
