@@ -24,7 +24,7 @@ const operation = (list1: Song[], list2: Song[], isUnion = false) =>
 const inFirstOnly = operation,
   inSecondOnly = (list1: Song[], list2: Song[]) => inFirstOnly(list2, list1);
 
-export async function selectRandomElement() {
+export async function selectRandomElement(time: number) {
   const getItemS = localStorage.getItem("stats");
   let randomSolutionSolution = songs[0];
   // Find a random element not already selected
@@ -59,6 +59,7 @@ export async function selectRandomElement() {
       currentTry: 0,
       didGuess: false,
       guesses: guesses,
+      startTime: 0,
     });
 
     localStorage.setItem("stats", JSON.stringify(stats));

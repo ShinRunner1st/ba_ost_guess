@@ -77,7 +77,7 @@ export function Result({
           </Button>
           <Button
             onClick={() => {
-              selectRandomElement();
+              selectRandomElement(time);
               window.location.reload();
             }}
             variant="red"
@@ -111,7 +111,7 @@ export function Result({
           </Button>
           <Button
             onClick={() => {
-              selectRandomElement();
+              selectRandomElement(time);
               window.location.reload();
             }}
             variant="red"

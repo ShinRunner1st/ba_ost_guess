@@ -29,17 +29,17 @@ export function InfoPopUp({ onClose }: Props) {
         </Styled.Section>
         <Styled.Section>
           <IoCafe size={50} />
-          <p>Most Blue Archive OST are from</p>
+          <p>Most of Blue Archive OST are from</p>
           <a
             href="https://www.youtube.com/@mo2bluearchive"
             target="_blank"
             rel="noopener noreferrer"
           >
-            MO2
+            MO2 Channel
           </a>
         </Styled.Section>
         <Styled.Section>
-          <p>Last Update 22/1/2025</p>
+          <p>Last Update 23/1/2025</p>
         </Styled.Section>
         <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
