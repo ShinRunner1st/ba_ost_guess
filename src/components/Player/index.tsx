@@ -10,9 +10,11 @@ import * as Styled from "./index.styled";
 interface Props {
   id: string;
   currentTry: number;
+  getStartTime: (time: number) => void;
+  time: number;
 }
 
-export function Player({ id, currentTry }: Props) {
+export function Player({ id, currentTry, getStartTime, time }: Props) {
   const opts = {
     width: "0", // Set width to 0
     height: "0", // Set height to 0
@@ -114,8 +116,15 @@ export function Player({ id, currentTry }: Props) {
               const randomTime = Math.floor(
                 Math.random() * (duration - playTimes[5] / 1000)
               ); // Generate a random time in seconds
-              playerRef.current?.internalPlayer.seekTo(randomTime);
-              setStartTime(randomTime);
+              if (time == 0) {
+                playerRef.current?.internalPlayer.seekTo(randomTime);
+                setStartTime(randomTime);
+                getStartTime(randomTime);
+              } else {
+                playerRef.current?.internalPlayer.seekTo(time);
+                setStartTime(time);
+                getStartTime(time);
+              }
             }
             playerRef.current?.internalPlayer.pauseVideo();
             event.target.setVolume(20);

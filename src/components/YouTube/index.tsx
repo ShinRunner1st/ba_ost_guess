@@ -3,9 +3,10 @@ import { default as YouTubePlayer } from "react-youtube";
 
 interface Props {
   id: string;
+  time: number;
 }
 
-export function YouTube({ id }: Props) {
+export function YouTube({ id, time }: Props) {
   return (
     <div style={{ margin: "5% 0" }}>
       <YouTubePlayer
@@ -19,6 +20,7 @@ export function YouTube({ id }: Props) {
           },
         }}
         onReady={(event) => {
+          event.target.seekTo(time);
           event.target.setVolume(20);
         }}
       />

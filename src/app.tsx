@@ -27,6 +27,7 @@ function App() {
   const [didGuess, setDidGuess] = React.useState<boolean>(false);
   const [correctRecent, setCorrectRecent] = React.useState<string>("");
   const [totalsGuesses, setTotalsGuesses] = React.useState<number>(0);
+  const [startTime, setStartTime] = React.useState<number>(0);
   const [calStat, setCalStat] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
 
   const firstRun = localStorage.getItem("firstRun") === null;
@@ -44,12 +45,15 @@ function App() {
           solution: todaysSolution,
           currentTry: 0,
           didGuess: 0,
+          startTime: 0,
         });
       } else {
-        const { currentTry, guesses, didGuess } = stats[stats.length - 1];
+        const { currentTry, guesses, didGuess, startTime } =
+          stats[stats.length - 1];
         setCurrentTry(currentTry);
         setGuesses(guesses);
         setDidGuess(didGuess);
+        setStartTime(startTime);
       }
     } else {
       // initialize stats
@@ -66,9 +70,10 @@ function App() {
       stats[stats.length - 1].currentTry = currentTry;
       stats[stats.length - 1].didGuess = didGuess;
       stats[stats.length - 1].guesses = guesses;
+      stats[stats.length - 1].startTime = startTime;
     }
   }),
-    [guesses, currentTry, didGuess];
+    [guesses, currentTry, didGuess, startTime];
 
   React.useEffect(() => {
     localStorage.setItem("stats", JSON.stringify(stats));
@@ -160,6 +165,11 @@ function App() {
       value: isCorrect ? 1 : 0,
     });
   }, [guesses, selectedSong]);
+
+  const getStartTime = React.useCallback((time: number) => {
+    setStartTime(time);
+  }, []);
+
   return (
     <Styled.BG>
       <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} />
@@ -182,6 +192,8 @@ function App() {
           guess={guess}
           correctRecent={correctRecent}
           totalsGuesses={totalsGuesses}
+          getStartTime={getStartTime}
+          time={startTime}
         />
       </Styled.Container>
       <Footer />

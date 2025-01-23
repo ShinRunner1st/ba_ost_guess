@@ -17,6 +17,7 @@ interface Props {
   guesses: GuessType[];
   correctRecent: string;
   totalsGuesses: number;
+  time: number;
 }
 
 export function Result({
@@ -26,6 +27,7 @@ export function Result({
   currentTry,
   correctRecent,
   totalsGuesses,
+  time,
 }: Props) {
   // const hoursToNextDay = Math.floor(
   //   (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
@@ -68,7 +70,7 @@ export function Result({
         <Styled.SongTitle>
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
-        <YouTube id={todaysSolution.youtubeId} />
+        <YouTube id={todaysSolution.youtubeId} time={time} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
             {buttonText}
@@ -102,7 +104,7 @@ export function Result({
         <Styled.SongTitle>
           {todaysSolution.artist} - {todaysSolution.name}
         </Styled.SongTitle>
-        <YouTube id={todaysSolution.youtubeId} />
+        <YouTube id={todaysSolution.youtubeId} time={time} />
         <Styled.Buttons>
           <Button onClick={copyResult} variant="green">
             {buttonText}

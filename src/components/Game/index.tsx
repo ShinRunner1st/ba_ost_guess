@@ -18,6 +18,8 @@ interface Props {
   guess: () => void;
   correctRecent: string;
   totalsGuesses: number;
+  getStartTime: (time: number) => void;
+  time: number;
 }
 
 export function Game({
@@ -30,6 +32,8 @@ export function Game({
   guess,
   correctRecent,
   totalsGuesses,
+  getStartTime,
+  time,
 }: Props) {
   if (didGuess || currentTry === 6) {
     return (
@@ -40,6 +44,7 @@ export function Game({
         guesses={guesses}
         correctRecent={correctRecent}
         totalsGuesses={totalsGuesses}
+        time={time}
       />
     );
   }
@@ -53,7 +58,12 @@ export function Game({
           active={index === currentTry}
         />
       ))}
-      <Player id={todaysSolution.youtubeId} currentTry={currentTry} />
+      <Player
+        id={todaysSolution.youtubeId}
+        currentTry={currentTry}
+        getStartTime={getStartTime}
+        time={time}
+      />
       <Search currentTry={currentTry} setSelectedSong={setSelectedSong} />
 
       <Styled.Buttons>
