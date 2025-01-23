@@ -111,10 +111,9 @@ export function Player({ id, currentTry }: Props) {
           onReady={(event) => {
             const duration = event.target.getDuration(); // Get video duration in seconds
             if (duration > 0) {
-              let randomTime = Math.floor(Math.random() * duration); // Generate a random time in seconds
-              if (randomTime + playTimes[5] / 1000 > duration) {
-                randomTime = duration - playTimes[5] / 1000;
-              }
+              const randomTime = Math.floor(
+                Math.random() * (duration - playTimes[5] / 1000)
+              ); // Generate a random time in seconds
               playerRef.current?.internalPlayer.seekTo(randomTime);
               setStartTime(randomTime);
             }
