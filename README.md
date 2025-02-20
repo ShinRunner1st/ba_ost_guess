@@ -4,10 +4,10 @@
 
 [Blue Archive Heardle](https://bluearchiveheardle.vercel.app/) is clone of spotify heardle <br />
 
-It will choice a random ost from blue archive in bag system which it won't play the same ost repeatly and it will random section of song to play <br />
+It will choice a random ost from blue archive in bag system which it won't play the same ost repeatly and random section of song to play <br />
 You can play this heardle and reset score at anytime
 
-# Search tip
+# Search tips
 
 * Search by Name
 * Search by No. of OST
