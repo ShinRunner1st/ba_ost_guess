@@ -1,5 +1,6 @@
 # Blue Archive Heardle
-![chrome_ngogKs6bVp](https://github.com/user-attachments/assets/6645b76c-c6a1-4cc9-a67b-0f945441f6c9)
+![chrome_FYJD6SVnl8](https://github.com/user-attachments/assets/dc7edcb9-7df5-4827-a5c8-6ee01d05a128)
+
 
 [Blue Archive Heardle](https://bluearchiveheardle.vercel.app/) is clone of spotify heardle <br />
 
