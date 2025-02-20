@@ -361,7 +361,7 @@ export const songs = [
   },
   {
     artist: "Mitsukiyo",
-    name: "Rolling Beat",
+    name: "Rolling beat",
     youtubeId: "lKRgr_mO2jQ",
     themeNo: "61",
   },
@@ -397,7 +397,7 @@ export const songs = [
   },
   {
     artist: "KARUT",
-    name: "Someday, sometime",
+    name: "someday, sometime",
     youtubeId: "F4V2pbyIEjs",
     themeNo: "67",
   },
@@ -511,7 +511,7 @@ export const songs = [
   },
   {
     artist: "Mitsukiyo",
-    name: "Summertime archive",
+    name: "Summertime Archive",
     youtubeId: "yyhZgO9BBEw",
     themeNo: "86",
   },
@@ -559,7 +559,7 @@ export const songs = [
   },
   {
     artist: "KARUT",
-    name: "Jackpot 777",
+    name: "JACKPOT 777",
     youtubeId: "YOm5UvwBLgc",
     themeNo: "95",
   },
@@ -721,7 +721,7 @@ export const songs = [
   },
   {
     artist: "Mitsukiyo",
-    name: "TOMODACHI SUMMER",
+    name: "TOMODACHI Summmer",
     youtubeId: "jVWEqpo3uUk",
     themeNo: "124",
   },
@@ -1231,7 +1231,7 @@ export const songs = [
   },
   {
     artist: "KARUT",
-    name: "Theme 206",
+    name: "Let me go Seaside",
     youtubeId: "ISZ8lKOVapA",
     themeNo: "206",
   },
@@ -1416,8 +1416,8 @@ export const songs = [
     themeNo: "265",
   },
   {
-    artist: "Unknown",
-    name: "Theme 268",
+    artist: "EmoCosine",
+    name: "Love Story",
     youtubeId: "Q9zuTntcFFc",
     themeNo: "268",
   },
