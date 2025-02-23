@@ -5,7 +5,7 @@ export function calStats(stats: StatsType[]) {
 
   stats.forEach((stat) => {
     if (stat.didGuess) arr[stat.currentTry] += 1;
-    else arr[0] += 1;
+    if (!stat.didGuess && stat.currentTry == 6) arr[0] += 1;
     arr[7] += 1;
   });
 
