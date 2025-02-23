@@ -12,7 +12,7 @@ export function scoreToEmoji(
   };
   const todaysDate = new Date();
   const prefix = `Blue Archive OST - ${todaysDate.toLocaleDateString()}`;
-  const urlLink = "https://ba-ost-guess.vercel.app/";
+  const urlLink = "https://bluearchiveheardle.vercel.app/";
   const scoreStats = correctRecent;
 
   let scoreEmoji = "";
@@ -29,5 +29,6 @@ export function scoreToEmoji(
     }
   });
 
-  return `${prefix}\nScore : ${scoreStats}\n🎧${scoreEmoji}\n${urlLink}`;
+  //return `${prefix}\nScore : ${scoreStats}\n🎧${scoreEmoji}\n${urlLink}`;
+  return `${prefix}\nScore : ${scoreStats}\n🎧${urlLink}`;
 }
