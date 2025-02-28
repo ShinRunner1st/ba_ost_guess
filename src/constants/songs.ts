@@ -1350,7 +1350,7 @@ export const songs = [
     themeNo: "236",
   },
   {
-    artist: "Unknown",
+    artist: "EmoCosine",
     name: "Theme 255",
     youtubeId: "HTl_f6fQBjM",
     themeNo: "255",
@@ -1386,7 +1386,7 @@ export const songs = [
     themeNo: "245",
   },
   {
-    artist: "Unknown",
+    artist: "EmoCosine",
     name: "Theme 247",
     youtubeId: "SPrBLc_KVd4",
     themeNo: "247",
@@ -1422,15 +1422,21 @@ export const songs = [
     themeNo: "268",
   },
   {
-    artist: "Unknown",
+    artist: "EmoCosine",
     name: "Theme 244",
     youtubeId: "Qy7GQxaUEyw",
     themeNo: "244",
   },
   {
-    artist: "Unknown",
+    artist: "EmoCosine",
     name: "Theme 262",
     youtubeId: "7o1SDIRwovw",
     themeNo: "262",
+  },
+  {
+    artist: "EmoCosine",
+    name: "Theme 235",
+    youtubeId: "3P7zDw5UFNo",
+    themeNo: "235",
   },
 ];
