@@ -1315,8 +1315,8 @@ export const songs = [
   },
   {
     artist: "Nor",
-    name: "トモダチOneStep",
-    youtubeId: "XV_X1lq5sfI",
+    name: "Tomodachi OneStep",
+    youtubeId: "NXyJrMMCDS4",
     themeNo: "185",
   },
   {
@@ -1438,5 +1438,23 @@ export const songs = [
     name: "Theme 235",
     youtubeId: "3P7zDw5UFNo",
     themeNo: "235",
+  },
+  {
+    artist: "EmoCosine",
+    name: "Theme 250",
+    youtubeId: "PiHFyQ3Stq4",
+    themeNo: "250",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 261",
+    youtubeId: "x1qbEB_3Cjg",
+    themeNo: "261",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 263",
+    youtubeId: "tufQqFTIOb8",
+    themeNo: "263",
   },
 ];
