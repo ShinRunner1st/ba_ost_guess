@@ -7,18 +7,20 @@ interface Props {
 }
 
 export function YouTube({ id, time }: Props) {
+  const isMobile = window.innerWidth < 768;
+  const opts = {
+  width: isMobile ? "320" : "560",
+  height: isMobile ? "180" : "315",
+  playerVars: {
+    autoplay: 1 as 0 | 1,
+    playsinline: 1 as 0 | 1,
+  },
+};
   return (
     <div style={{ margin: "5% 0" }}>
       <YouTubePlayer
         videoId={id}
-        opts={{
-          width: "560",
-          height: "315",
-          playerVars: {
-            autoplay: 1,
-            playsinline: 1,
-          },
-        }}
+        opts={opts}
         onReady={(event) => {
           event.target.seekTo(time);
           event.target.setVolume(20);

@@ -73,4 +73,5 @@ export const Buttons = styled.div`
   justify-content: center;
   width: 100%;
   text-align: center;
+  position: relative;
 `;
