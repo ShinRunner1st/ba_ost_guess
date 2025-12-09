@@ -12,10 +12,10 @@ export function scoreToEmoji(
     empty: "⬛️",
   };
   const todaysDate = new Date();
-  const prefix = `Blue Archive OST - ${todaysDate.toLocaleDateString()}`;
+  const prefix = `Blue Archive Heardle - ${todaysDate.toLocaleDateString()}`;
   const urlLink = "https://bluearchive-heardle.xyz/";
   const scoreStats = correctRecent;
-  const divider = "--------------------------";
+  const divider = "--------------------------------";
 
   function percentToGreenBlocks(value: number, total: number, maxBlocks = 10) {
     if (total === 0 || value === 0) return "⬜"; // ✅ PLACEHOLDER
@@ -40,7 +40,7 @@ export function scoreToEmoji(
     "4: " + Stats[4] + " " + percentToGreenBlocks(Stats[4], total) + "\n" +
     "5: " + Stats[5] + " " + percentToGreenBlocks(Stats[5], total) + "\n" +
     "6: " + Stats[6] + " " + percentToGreenBlocks(Stats[6], total) + "\n" +
-    "X: " + Stats[0] + " " + redBlocks(Stats[0], total) + "\n";
+    "X: " + Stats[0] + " " + redBlocks(Stats[0], total);
 
   let scoreEmoji = "";
 
@@ -58,5 +58,5 @@ export function scoreToEmoji(
 
   //return `${prefix}\nScore : ${scoreStats}\n🎧${scoreEmoji}\n${urlLink}`;
   //return `${prefix}\nScore : ${scoreStats}\n🎧${urlLink}`;
-  return `${prefix}\n${divider}\n${guessIn}\nScore : ${scoreStats}\n🎧${urlLink}`;
+  return `${prefix}\n${divider}\n${guessIn}\n${divider}\nScore : ${scoreStats}\n🎵${urlLink}`;
 }
