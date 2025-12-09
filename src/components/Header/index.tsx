@@ -1,5 +1,5 @@
 import React from "react";
-import { IoInformationCircleOutline, IoBarChart, IoBulbOutline } from "react-icons/io5";
+import { IoInformationCircleOutline, IoBarChart, IoHelpCircleOutline } from "react-icons/io5";
 
 import * as Styled from "./index.styled";
 
@@ -18,7 +18,7 @@ export function Header({ openInfoPopUp, openStatsPopUp, openHowToPopUp }: Props)
             onClick={openInfoPopUp}
             size={40}
           />
-          <IoBulbOutline
+          <IoHelpCircleOutline
             onClick={openHowToPopUp}
             size={40}
           />

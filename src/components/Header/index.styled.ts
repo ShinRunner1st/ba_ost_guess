@@ -55,7 +55,12 @@ export const Logo = styled.h1`
   font-family: "Nunito Sans Variable";
   justify-self: center;
   white-space: nowrap;
+  font-size: 2em;
 
   -webkit-touch-callout: none;
   user-select: none;
+
+  @media (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `;
