@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const CorrectResultTitle = styled.h1`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   color: lightgreen;
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
@@ -13,7 +13,7 @@ export const CorrectResultTitle = styled.h1`
 `;
 
 export const FailResultTitle = styled.h1`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   color: red;
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
@@ -24,7 +24,7 @@ export const FailResultTitle = styled.h1`
 `;
 
 export const Tries = styled.h4`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
     text-align: center;
@@ -35,7 +35,7 @@ export const Tries = styled.h4`
 `;
 
 export const SongTitle = styled.h2`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   color: lightblue;
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
@@ -46,8 +46,8 @@ export const SongTitle = styled.h2`
   margin-bottom: 0;
 `;
 
-export const Score = styled.h4`
-  font-family: "Noto Sans";
+export const Score = styled.h2`
+  font-family: "Nunito Sans Variable";
   text-shadow: #000000 1px 0 10px;
   @media (max-width: 768px) {
     text-align: center;
@@ -55,10 +55,11 @@ export const Score = styled.h4`
   }
 
   margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export const TimeToNext = styled.h4`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   @media (max-width: 768px) {
     text-align: center;
     width: 100%;
@@ -66,7 +67,7 @@ export const TimeToNext = styled.h4`
 `;
 
 export const Buttons = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
 
   display: flex;
   justify-content: center;

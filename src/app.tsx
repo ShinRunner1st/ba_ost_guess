@@ -8,7 +8,7 @@ import { GuessType } from "./types/guess";
 
 import { todaysSolution, calRecentCorrect, calStats } from "./helpers";
 
-import { Header, InfoPopUp, Game, Footer, StatsPopUp } from "./components";
+import { Header, InfoPopUp, Game, Footer, StatsPopUp, HowToPopUp } from "./components";
 
 import * as Styled from "./app.styled";
 
@@ -111,6 +111,16 @@ function App() {
     setIsStatsPopUpOpen(false);
   }, []);
 
+  const [isHowToPopUpOpen, setIsHowToPopUpOpen] =
+    React.useState<boolean>(false);
+
+  const openHowToPopUp = React.useCallback(() => {
+    setIsHowToPopUpOpen(true);
+  }, []);
+  const closeHowToPopUp = React.useCallback(() => {
+    setIsHowToPopUpOpen(false);
+  }, []);
+
   const skip = React.useCallback(() => {
     setGuesses((guesses: GuessType[]) => {
       const newGuesses = [...guesses];
@@ -136,7 +146,7 @@ function App() {
     const isCorrect = selectedSong === todaysSolution;
 
     if (!selectedSong) {
-      alert("Not Found");
+      alert("You must select a choice to make a guess.");
       return;
     }
 
@@ -172,7 +182,7 @@ function App() {
 
   return (
     <Styled.BG>
-      <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} />
+      <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} openHowToPopUp={openHowToPopUp}/>
       {isStatsPopUpOpen && (
         <StatsPopUp
           onClose={closeStatsPopUp}
@@ -181,6 +191,7 @@ function App() {
         />
       )}
       {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
+      {isHowToPopUpOpen && <HowToPopUp onClose={closeHowToPopUp} />}
       <Styled.Container>
         <Game
           guesses={guesses}
@@ -194,6 +205,7 @@ function App() {
           totalsGuesses={totalsGuesses}
           getStartTime={getStartTime}
           time={startTime}
+          Stats={calStat}
         />
       </Styled.Container>
       <Footer />

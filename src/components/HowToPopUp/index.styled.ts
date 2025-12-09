@@ -11,7 +11,7 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
-
+    
   position: absolute;
   top: 0;
   z-index: 2;
@@ -62,7 +62,7 @@ export const PopUp = styled.div`
 `;
 
 export const Spacer = styled.div`
-  width: 70%;
+  width: 90%;
   height: 0.2px;
 
   margin: 20px 0;
@@ -75,11 +75,11 @@ export const Section = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: space-between;
 
   a {
     color: ${({ theme }) => theme.text};
   }
-  margin-top: 5%;
 `;
 
 export const Contact = styled.p`
@@ -93,24 +93,17 @@ export const Contact = styled.p`
   opacity: 0.5;
 `;
 
-export const Progress = styled.div<{ value: number; maxValue: number; animate: boolean;}>`
-  width: ${({ animate, value, maxValue }) =>
-    animate ? (value / maxValue) * 80 + "%" : "0%"};
-  height: 20px;
-  align-self: flex-start;
-  background-color: ${({ theme }) => theme.green};
-  border-radius: 2px;
-
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+export const Text = styled.p`
+  a {
+    color: ${({ theme }) => theme.text};
+  }
+  font-size: 1rem;
 `;
 
-export const BadProgress = styled.div<{ value: number; maxValue: number; animate: boolean;}>`
-  width: ${({ animate, value, maxValue }) =>
-    animate ? (value / maxValue) * 80 + "%" : "0%"};
-  height: 20px;
-  align-self: flex-start;
-  background-color: ${({ theme }) => theme.red};
-  border-radius: 2px;
-
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+export const TextB = styled.p`
+  a {
+    color: ${({ theme }) => theme.text};
+  }
+  font-size: 0.9rem;
+  font-weight: bold;
 `;

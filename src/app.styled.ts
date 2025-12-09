@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
 import img from "./image/image.png";
+import "@fontsource-variable/nunito-sans";
 
 export const Container = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   width: 40%;
   height: 78vh;
 

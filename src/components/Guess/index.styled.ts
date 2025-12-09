@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const Container = styled.div<{
   active: boolean;
   isCorrect: boolean | undefined;
 }>`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   width: 100%;
   height: 45px;
 
@@ -32,7 +32,7 @@ export const Container = styled.div<{
 `;
 
 export const Text = styled.p`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   width: 100%;
   height: max-content;
 

@@ -1,25 +1,35 @@
 import React from "react";
-import { IoInformationCircleOutline, IoCellular } from "react-icons/io5";
+import { IoInformationCircleOutline, IoBarChart, IoBulbOutline } from "react-icons/io5";
 
 import * as Styled from "./index.styled";
 
 interface Props {
   openInfoPopUp: () => void;
   openStatsPopUp: () => void;
+  openHowToPopUp: () => void;
 }
 
-export function Header({ openInfoPopUp, openStatsPopUp }: Props) {
+export function Header({ openInfoPopUp, openStatsPopUp, openHowToPopUp }: Props) {
   return (
     <Styled.Container>
       <Styled.Content>
-        <IoInformationCircleOutline
-          onClick={openInfoPopUp}
-          size={40}
-          width={40}
-          height={40}
-        />
+        <div className="left-icons">
+          <IoInformationCircleOutline
+            onClick={openInfoPopUp}
+            size={40}
+          />
+          <IoBulbOutline
+            onClick={openHowToPopUp}
+            size={40}
+          />
+        </div>
         <Styled.Logo>Blue Archive OST</Styled.Logo>
-        <IoCellular onClick={openStatsPopUp} size={30} width={30} height={30} />
+        <div className="right-icon">
+          <IoBarChart
+            onClick={openStatsPopUp}
+            size={30}
+          />
+        </div>
       </Styled.Content>
     </Styled.Container>
   );

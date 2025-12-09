@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "..";
 
 import * as Styled from "./index.styled";
@@ -11,40 +11,49 @@ interface Props {
 }
 
 export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Reset then trigger animation every open
+    setAnimate(false);
+    const timer = setTimeout(() => setAnimate(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Styled.Container>
       <Styled.PopUp>
-        <h1>Stats</h1>
+        <h1>Stats 📊</h1>
         <Styled.Spacer />
         <div style={{ width: 300 }}>
           <Styled.Section>
-            1 | <Styled.Progress value={Stats[1]} maxValue={Stats[7]} />
+            1 | <Styled.Progress animate={animate} value={Stats[1]} maxValue={Stats[7]} />
             {Stats[1]}
           </Styled.Section>
           <Styled.Section>
-            2 | <Styled.Progress value={Stats[2]} maxValue={Stats[7]} />
+            2 | <Styled.Progress animate={animate} value={Stats[2]} maxValue={Stats[7]} />
             {Stats[2]}
           </Styled.Section>
           <Styled.Section>
-            3 | <Styled.Progress value={Stats[3]} maxValue={Stats[7]} />
+            3 | <Styled.Progress animate={animate} value={Stats[3]} maxValue={Stats[7]} />
             {Stats[3]}
           </Styled.Section>
           <Styled.Section>
-            4 | <Styled.Progress value={Stats[4]} maxValue={Stats[7]} />
+            4 | <Styled.Progress animate={animate} value={Stats[4]} maxValue={Stats[7]} />
             {Stats[4]}
           </Styled.Section>
           <Styled.Section>
-            5 | <Styled.Progress value={Stats[5]} maxValue={Stats[7]} />
+            5 | <Styled.Progress animate={animate} value={Stats[5]} maxValue={Stats[7]} />
             {Stats[5]}
           </Styled.Section>
           <Styled.Section>
             6 |
-            <Styled.Progress value={Stats[6]} maxValue={Stats[7]} />
+            <Styled.Progress animate={animate} value={Stats[6]} maxValue={Stats[7]} />
             {Stats[6]}
           </Styled.Section>
           <Styled.Section>
             X |
-            <Styled.BadProgress value={Stats[0]} maxValue={Stats[7]} />
+            <Styled.BadProgress animate={animate} value={Stats[0]} maxValue={Stats[7]} />
             {Stats[0]}
           </Styled.Section>
         </div>

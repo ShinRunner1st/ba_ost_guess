@@ -20,6 +20,7 @@ interface Props {
   totalsGuesses: number;
   getStartTime: (time: number) => void;
   time: number;
+  Stats: number[];
 }
 
 export function Game({
@@ -34,6 +35,7 @@ export function Game({
   totalsGuesses,
   getStartTime,
   time,
+  Stats,
 }: Props) {
   if (didGuess || currentTry === 6) {
     return (
@@ -45,6 +47,7 @@ export function Game({
         correctRecent={correctRecent}
         totalsGuesses={totalsGuesses}
         time={time}
+        Stats={Stats}
       />
     );
   }

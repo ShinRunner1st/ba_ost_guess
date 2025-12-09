@@ -1,6 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  animation: op 0.25s ease-out;
+
+  @keyframes op {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   position: absolute;
   top: 0;
   z-index: 2;
@@ -16,6 +27,19 @@ export const Container = styled.div`
 `;
 
 export const PopUp = styled.div`
+  animation: popup 0.25s ease-out;
+
+  @keyframes popup {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   width: 90%;
   max-width: 500px;
   @media (max-width: 768px) {

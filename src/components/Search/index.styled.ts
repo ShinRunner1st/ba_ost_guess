@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const Container = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   position: relative;
 
   width: 100%;
@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   display: flex;
   align-items: center;
 
@@ -38,7 +38,7 @@ export const SearchPadding = styled.div`
 `;
 
 export const Input = styled.input`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   width: 100%;
   height: 100%;
   margin: 0 10px;
@@ -52,7 +52,7 @@ export const Input = styled.input`
 `;
 
 export const ResultsContainer = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   position: absolute;
   bottom: 50px;
   z-index: 1;
@@ -67,7 +67,7 @@ export const ResultsContainer = styled.div`
 `;
 
 export const Result = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   padding: 1px 15px;
 
   background-color: ${({ theme }) => theme.background1};
@@ -86,7 +86,7 @@ export const Result = styled.div`
 `;
 
 export const ResultText = styled.p`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   width: 100%;
 
   color: ${({ theme }) => theme.text};

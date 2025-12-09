@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const Buttons = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   margin-top: 5%;
   display: flex;
   justify-content: space-between;

@@ -168,14 +168,13 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
             <Styled.TimeStamp>16s</Styled.TimeStamp>
           </Styled.TimeStamps>
           {!play ? (
-            <IoPlayCircle
-              style={{ cursor: "pointer" }}
+            <Styled.PlayIcon
               size={70}
               color="#fff"
               onClick={startPlayback}
             />
           ) : (
-            <IoPauseCircle
+            <Styled.PauseIcon
               style={{ cursor: "pointer" }}
               size={70}
               color="#fff"

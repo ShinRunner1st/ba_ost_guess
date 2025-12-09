@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
+import { IoPauseCircle, IoPlayCircle } from "react-icons/io5";
 
 export const ProgressBackground = styled.div`
   position: relative;
@@ -45,7 +46,7 @@ export const TimeStamps = styled.div`
 `;
 
 export const TimeStamp = styled.p`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   color: ${({ theme }) => theme.text};
 `;
 
@@ -62,4 +63,24 @@ export const Overlay = styled.div`
   position: relative;
   z-index: 1; /* Keeps it in front of the YouTube player */
   /* Add your overlay styling here */
+`;
+
+export const PlayIcon = styled(IoPlayCircle)`
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+`;
+
+export const PauseIcon = styled(IoPauseCircle)`
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
 `;

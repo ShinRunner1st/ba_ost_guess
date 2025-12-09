@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../constants";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const Button = styled.button<{ variant?: keyof typeof theme }>`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   background-color: ${({ theme, variant }) =>
     variant ? theme[variant] : theme.background100};
 
@@ -17,7 +17,9 @@ export const Button = styled.button<{ variant?: keyof typeof theme }>`
   width: max-content;
   padding: 12.5px 20px;
 
+  transition: transform 0.15s ease, opacity 0.15s ease;
   &:hover {
+    transform: scale(1.08);
     opacity: 0.8;
   }
 

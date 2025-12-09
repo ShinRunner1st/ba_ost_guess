@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import "@fontsource/noto-sans";
+import "@fontsource-variable/nunito-sans";
 
 export const Container = styled.header`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  font-family: "Noto Sans";
+  font-family: "Nunito Sans Variable";
   display: flex;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
@@ -33,20 +33,32 @@ export const Content = styled.div`
 
   max-width: 650px;
 
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
   svg:hover {
     cursor: pointer;
     opacity: 0.8;
+    transform: scale(1.08);
   }
 
   a {
     color: ${({ theme }) => theme.text};
   }
+
+  .left-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .right-icon {
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const Logo = styled.h1`
   color: ${({ theme }) => theme.text};
-  font-family: "Noto Sans";
-  text-shadow: #000000 1px 0 10px;
+  font-family: "Nunito Sans Variable";
   width: max-content;
 
   -webkit-touch-callout: none;

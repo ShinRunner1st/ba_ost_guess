@@ -18,6 +18,7 @@ interface Props {
   correctRecent: string;
   totalsGuesses: number;
   time: number;
+  Stats: number[];
 }
 
 export function Result({
@@ -28,6 +29,7 @@ export function Result({
   correctRecent,
   totalsGuesses,
   time,
+  Stats
 }: Props) {
   // const hoursToNextDay = Math.floor(
   //   (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
@@ -38,16 +40,16 @@ export function Result({
   // );
   const [buttonText, setButtonText] = useState("Copy Score");
   const textForTry = [
-    "OMG! 😭",
-    "Wow!",
-    "Im impressed.",
-    "Not bad.",
-    "Phew.",
-    "That was close...",
-  ];
+  "EH?! FIRST TRY?! 😮",
+  "Sensei is strong today 💪",
+  "Not bad at all~ 👀",
+  "Okay, getting intense 😤",
+  "THAT WAS TOO CLOSE 😭",
+  "WE SURVIVED, SENSEI 😭💥"
+];
 
   const copyResult = React.useCallback(() => {
-    navigator.clipboard.writeText(scoreToEmoji(guesses, correctRecent));
+    navigator.clipboard.writeText(scoreToEmoji(guesses, correctRecent, Stats));
     setButtonText("Copied to your clipboard");
     setTimeout(() => {
       setButtonText("Copy Score");
@@ -60,7 +62,7 @@ export function Result({
     return (
       <>
         <Styled.CorrectResultTitle>
-          {textForTry[currentTry - 1]}
+          {textForTry[Math.min(currentTry - 1, textForTry.length - 1)]}
         </Styled.CorrectResultTitle>
         <Styled.Tries>
           {songs.length == totalsGuesses && "This is last song and"} You got it
@@ -72,7 +74,7 @@ export function Result({
         </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} time={time} />
         <Styled.Buttons>
-          <Button onClick={copyResult} variant="green">
+          <Button onClick={copyResult} variant="background100">
             {buttonText}
           </Button>
           <Button
@@ -80,7 +82,7 @@ export function Result({
               selectRandomElement(time);
               window.location.reload();
             }}
-            variant="red"
+            variant={songs.length === totalsGuesses ? "red" : "green"}
             style={{ marginLeft: "50px" }}
           >
             {songs.length == totalsGuesses && "Reset Score"}
@@ -95,10 +97,9 @@ export function Result({
   } else {
     return (
       <>
-        <Styled.FailResultTitle>Fail</Styled.FailResultTitle>
+        <Styled.FailResultTitle>Mission Failed… 💔</Styled.FailResultTitle>
         <Styled.Tries>
-          {songs.length == totalsGuesses && "This is last song and"} You are
-          Noob.
+          {songs.length == totalsGuesses && "This is last song and"} Sensei needs more training 😭
         </Styled.Tries>
         <Styled.Score>Score : {correctRecent}</Styled.Score>
         <Styled.SongTitle>
@@ -106,7 +107,7 @@ export function Result({
         </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} time={time} />
         <Styled.Buttons>
-          <Button onClick={copyResult} variant="green">
+          <Button onClick={copyResult} variant="background100">
             {buttonText}
           </Button>
           <Button
@@ -114,7 +115,7 @@ export function Result({
               selectRandomElement(time);
               window.location.reload();
             }}
-            variant="red"
+            variant={songs.length === totalsGuesses ? "red" : "green"}
             style={{ marginLeft: "25px" }}
           >
             {songs.length == totalsGuesses && "Reset Score"}

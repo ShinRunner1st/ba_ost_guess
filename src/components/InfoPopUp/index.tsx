@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  IoMusicalNoteOutline,
+  IoMusicalNotes,
   IoHelpCircleOutline,
   IoCafe,
 } from "react-icons/io5";
@@ -20,15 +20,15 @@ export function InfoPopUp({ onClose }: Props) {
         <h1>Welcome 👋</h1>
         <Styled.Spacer />
         <Styled.Section>
-          <IoMusicalNoteOutline size={50} />
+          <IoMusicalNotes size={30} />
           <p>Blue Archive OST Heardle</p>
         </Styled.Section>
         <Styled.Section>
-          <IoHelpCircleOutline size={50} />
+          <IoHelpCircleOutline size={30} />
           <p>A clone of Heardle for Blue Archive OST.</p>
         </Styled.Section>
         <Styled.Section>
-          <IoCafe size={50} />
+          <IoCafe size={30} />
           <p>Most of Blue Archive OST are from</p>
           <a
             href="https://www.youtube.com/@mo2bluearchive"
@@ -39,7 +39,7 @@ export function InfoPopUp({ onClose }: Props) {
           </a>
         </Styled.Section>
         <Styled.Section>
-          <p>Last Update 24/11/2025</p>
+          <p>Last Update 9/12/2025</p>
         </Styled.Section>
         <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
