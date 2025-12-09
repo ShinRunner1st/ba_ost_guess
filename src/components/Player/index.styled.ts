@@ -4,30 +4,34 @@ import { IoPauseCircle, IoPlayCircle } from "react-icons/io5";
 
 export const ProgressBackground = styled.div`
   position: relative;
+
   width: 100%;
-  height: 18px;
-
+  height: 20px;
   background-color: ${({ theme }) => theme.gray};
-  border-radius: 6px;
+  border-radius: 2px;
 
-  margin-top: 12px;
-  overflow: hidden;
+  margin-top: 5%;
 `;
 
 export const Progress = styled.div<{ value: number }>`
-  width: ${({ value }) => Math.min(value * 6.25, 100)}%;
-  height: 100%;
+  width: ${({ value }) => value * 6.25}%;
+  height: 20px;
+
+  align-self: flex-start;
 
   background-color: ${({ theme }) => theme.green};
 
-  transition: width 0.5s ease;
+  border-radius: 2px;
+
+  transition: width 0.5s;
 `;
 
 export const Separator = styled.div`
   position: absolute;
   top: 0;
+
+  width: 0.8px;
   height: 100%;
-  width: 1px;
 
   background-color: ${({ theme }) => theme.border100};
 `;
@@ -36,17 +40,14 @@ export const TimeStamps = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-shadow: #000000 1px 0 10px;
 
   width: 100%;
-  margin-top: 6px;
-
-  text-shadow: #000000 1px 0 10px;
 `;
 
 export const TimeStamp = styled.p`
   font-family: "Nunito Sans Variable";
   color: ${({ theme }) => theme.text};
-  font-size: 1rem;
 `;
 
 export const StyledYouTube = styled.div`
@@ -64,27 +65,9 @@ export const Overlay = styled.div`
   /* Add your overlay styling here */
 `;
 
-export const PlayButtonWrapper = styled.div`
-  width: 60px;
-  height: 60px;
-
-  min-width: 20px;   /* ✅ Prevents flex collapse */
-  min-height: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex-shrink: 0;    /* ✅ CRITICAL: Stops resize collapsing */
-`;
-
 export const PlayIcon = styled(IoPlayCircle)`
-  width: 100%;
-  height: 100%;
-
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
-  will-change: transform;
 
   &:hover {
     transform: scale(1.08);
@@ -93,25 +76,11 @@ export const PlayIcon = styled(IoPlayCircle)`
 `;
 
 export const PauseIcon = styled(IoPauseCircle)`
-  width: 100%;
-  height: 100%;
-
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
-  will-change: transform;
 
   &:hover {
     transform: scale(1.08);
     opacity: 0.8;
   }
-`;
-
-export const ProgressWrapper = styled.div`
-  flex: 1;                 /* ✅ Takes remaining horizontal space */
-  min-width: 100%;        /* ✅ Prevents collapse on resize */
-
-  display: flex;
-  align-items: center;
-
-  margin: 0 12px;         /* ✅ Spacing between icons */
 `;

@@ -39,7 +39,7 @@ export const Content = styled.div`
 
   .left-icons {
     display: flex;
-    gap: 12px;
+    gap: 0px;
     justify-self: start;
   }
 

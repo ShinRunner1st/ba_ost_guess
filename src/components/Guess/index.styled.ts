@@ -7,35 +7,37 @@ export const Container = styled.div<{
 }>`
   font-family: "Nunito Sans Variable";
   width: 100%;
-  min-height: 54px;
+  height: 45px;
 
-  margin: 6px 0;
+  margin: 5px auto;
 
   display: flex;
   align-items: center;
 
-  border: 1px solid
-    ${({ theme, active, isCorrect }) => {
-      if (active) return theme.border;
-      if (isCorrect === false) return theme.red;
+  border-color: ${({ theme, active, isCorrect }) => {
+    if (active) {
+      return theme.border;
+    } else if (isCorrect === false) {
+      return theme.red;
+    } else {
       return theme.border100;
-    }};
-
-  border-radius: 6px;
+    }
+  }};
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
   background-color: ${({ theme }) => theme.background100};
+
   color: ${({ theme }) => theme.text};
 `;
 
 export const Text = styled.p`
   font-family: "Nunito Sans Variable";
   width: 100%;
+  height: max-content;
 
-  padding: 0 12px;
+  padding: 0px 10px;
 
   font-size: 1rem;
   color: ${({ theme }) => theme.text};
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 `;
