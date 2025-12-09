@@ -9,10 +9,7 @@ export const Container = styled.header`
 
   width: 100%;
 
-  border-color: ${({ theme }) => theme.border};
-  border-bottom-width: 0.5px;
-  border-bottom-style: solid;
-
+  border-bottom: 0.5px solid ${({ theme }) => theme.border};
   background-color: ${({ theme }) => theme.background100};
 
   margin-bottom: 15px;
@@ -20,18 +17,13 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   font-family: "Nunito Sans Variable";
-  display: flex;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
 
-  width: 40%;
-
-  @media (max-width: 768px) {
-    width: 95%;
-  }
-
+  width: 100%;
   max-width: 650px;
+  padding: 0 16px;
 
   transition: transform 0.15s ease, opacity 0.15s ease;
 
@@ -48,18 +40,21 @@ export const Content = styled.div`
   .left-icons {
     display: flex;
     gap: 12px;
+    justify-self: start;
   }
 
   .right-icon {
     display: flex;
     align-items: center;
+    justify-self: end;
   }
 `;
 
 export const Logo = styled.h1`
   color: ${({ theme }) => theme.text};
   font-family: "Nunito Sans Variable";
-  width: max-content;
+  justify-self: center;
+  white-space: nowrap;
 
   -webkit-touch-callout: none;
   user-select: none;

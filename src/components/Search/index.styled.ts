@@ -4,10 +4,8 @@ import "@fontsource-variable/nunito-sans";
 export const Container = styled.div`
   font-family: "Nunito Sans Variable";
   position: relative;
-
   width: 100%;
-
-  margin-top: 5%;
+  margin-top: 12px;
 `;
 
 export const SearchContainer = styled.div`
@@ -18,34 +16,29 @@ export const SearchContainer = styled.div`
   width: 100%;
   height: 50px;
 
-  border-color: ${({ theme }) => theme.border};
-  border-width: 1px;
-  border-radius: 5px;
-  border-style: solid;
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: 8px;
 
   background-color: ${({ theme }) => theme.background1};
-
   color: ${({ theme }) => theme.text};
 `;
 
 export const SearchPadding = styled.div`
   display: flex;
   align-items: center;
-
   width: 100%;
-
-  padding: 0 15px;
+  padding: 0 12px;
 `;
 
 export const Input = styled.input`
   font-family: "Nunito Sans Variable";
   width: 100%;
   height: 100%;
-  margin: 0 10px;
+  margin: 0 8px;
 
   background-color: transparent;
   border: none;
-  outline: none !important;
+  outline: none;
 
   color: ${({ theme }) => theme.text};
   font-size: 1rem;
@@ -56,6 +49,8 @@ export const ResultsContainer = styled.div`
   position: absolute;
   bottom: 50px;
   z-index: 1;
+
+  margin-top: 6px;
 
   display: flex;
   flex-direction: column;
@@ -68,18 +63,14 @@ export const ResultsContainer = styled.div`
 
 export const Result = styled.div`
   font-family: "Nunito Sans Variable";
-  padding: 1px 15px;
+  padding: 0px 12px;
 
   background-color: ${({ theme }) => theme.background1};
-
-  border-color: ${({ theme }) => theme.border};
-  border-width: 1px;
-  border-radius: 5px;
-  border-style: solid;
+  border: 1px solid ${({ theme }) => theme.border};
 
   color: ${({ theme }) => theme.text};
-
   cursor: pointer;
+
   &:hover {
     background-color: ${({ theme }) => theme.background100};
   }

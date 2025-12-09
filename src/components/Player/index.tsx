@@ -135,6 +135,7 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
       </Styled.StyledYouTube>
       {isReady ? (
         <>
+        <Styled.ProgressWrapper>
           <Styled.ProgressBackground>
             {currentTime !== 0 && (
               <Styled.Progress value={currentTime - startTime} />
@@ -146,6 +147,7 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
               />
             ))}
           </Styled.ProgressBackground>
+          </Styled.ProgressWrapper>
           <Styled.TimeStamps>
             <Styled.TimeStamp>0s</Styled.TimeStamp>
             <Styled.TimeStamp />
@@ -167,20 +169,20 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
             <Styled.TimeStamp />
             <Styled.TimeStamp>16s</Styled.TimeStamp>
           </Styled.TimeStamps>
+          <Styled.PlayButtonWrapper>
           {!play ? (
             <Styled.PlayIcon
-              size={70}
               color="#fff"
               onClick={startPlayback}
             />
           ) : (
             <Styled.PauseIcon
               style={{ cursor: "pointer" }}
-              size={70}
               color="#fff"
               onClick={pasuePlayback}
             />
           )}
+          </Styled.PlayButtonWrapper>
         </>
       ) : (
         <p>Loading player...</p>
