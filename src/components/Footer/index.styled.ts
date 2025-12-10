@@ -2,6 +2,7 @@ import styled from "styled-components";
 import "@fontsource-variable/nunito-sans";
 
 export const Text = styled.p`
+  z-index: -1;
   position: absolute;
   bottom: 0;
   width: 100%;

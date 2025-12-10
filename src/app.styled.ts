@@ -28,6 +28,7 @@ export const BG = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: -10;
 
   background-position: center;
   background-repeat: no-repeat;

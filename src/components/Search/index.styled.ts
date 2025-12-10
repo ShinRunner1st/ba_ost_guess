@@ -74,6 +74,10 @@ export const Result = styled.div<ResultProps>`
   font-family: "Nunito Sans Variable";
   padding: 1px 15px;
 
+  display: flex;                  /* ✅ */
+  align-items: center;            /* ✅ */
+  justify-content: space-between; /* ✅ */
+
   background-color: ${({ theme, $isFocused }) => 
     $isFocused ? theme.background100 : theme.background1};
 
@@ -92,10 +96,20 @@ export const Result = styled.div<ResultProps>`
 
 export const ResultText = styled.p`
   font-family: "Nunito Sans Variable";
-  width: 100%;
 
   color: ${({ theme }) => theme.text};
   font-size: 0.9rem;
 
   user-select: none;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+`;
+
+export const ThemeNo = styled.span`
+  font-size: 0.8rem;
+  opacity: 0.7;
+  white-space: nowrap;
+  margin-left: 8px;
 `;

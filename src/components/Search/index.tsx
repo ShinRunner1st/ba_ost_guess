@@ -20,7 +20,11 @@ export function Search({ currentTry, setSelectedSong, selectedSong }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
-    if (selectedSong && value !== `${selectedSong.artist} - ${selectedSong.name}`) {
+    if (value == results[0]?.artist + " - " + results[0]?.name) {
+      setSelectedSong(results[0]);
+      setResults([]);
+      setFocusedIndex(-1);
+    } else if (selectedSong && value !== `${selectedSong.artist} - ${selectedSong.name}`) {
       setResults(searchSong(value));
       setSelectedSong(undefined);
       setFocusedIndex(-1);
@@ -109,6 +113,9 @@ export function Search({ currentTry, setSelectedSong, selectedSong }: Props) {
             <Styled.ResultText>
               {song.artist} - {song.name}
             </Styled.ResultText>
+            <Styled.ThemeNo>
+              {song.name !== `Theme ${song.themeNo}` && ` [Theme ${song.themeNo}]`}
+            </Styled.ThemeNo>
           </Styled.Result>
         ))}
       </Styled.ResultsContainer>
