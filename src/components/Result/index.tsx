@@ -56,6 +56,23 @@ export function Result({
     }, 2000);
   }, [guesses, correctRecent]);
 
+  React.useEffect(() => {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Enter" && didGuess) {
+          e.preventDefault(); // Prevents accidental form submissions
+          selectRandomElement(time);
+          window.location.reload();
+        }
+      };
+  
+      window.addEventListener("keydown", handleKeyDown);
+  
+      // Cleanup: Remove listener when component unmounts or dependencies change
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }, [didGuess]);
+
   if (didGuess) {
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
 

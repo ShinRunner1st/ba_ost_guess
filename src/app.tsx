@@ -180,6 +180,24 @@ function App() {
     setStartTime(time);
   }, []);
 
+  // Listen for "Enter" key globally
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Only trigger if Enter is pressed AND a song is currently selected
+      if (e.key === "Enter" && selectedSong) {
+        e.preventDefault(); // Prevents accidental form submissions
+        guess();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup: Remove listener when component unmounts or dependencies change
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [guess, selectedSong]); // Re-run effect if these change
+
   return (
     <Styled.BG>
       <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} openHowToPopUp={openHowToPopUp}/>
