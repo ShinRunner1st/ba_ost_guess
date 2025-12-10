@@ -206,6 +206,7 @@ function App() {
           getStartTime={getStartTime}
           time={startTime}
           Stats={calStat}
+          selectedSong={selectedSong}
         />
       </Styled.Container>
       <Footer />

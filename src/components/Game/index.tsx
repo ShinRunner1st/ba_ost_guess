@@ -21,6 +21,7 @@ interface Props {
   getStartTime: (time: number) => void;
   time: number;
   Stats: number[];
+  selectedSong: Song | undefined;
 }
 
 export function Game({
@@ -36,6 +37,7 @@ export function Game({
   getStartTime,
   time,
   Stats,
+  selectedSong,
 }: Props) {
   if (didGuess || currentTry === 6) {
     return (
@@ -67,7 +69,7 @@ export function Game({
         getStartTime={getStartTime}
         time={time}
       />
-      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} />
+      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} selectedSong={selectedSong} />
 
       <Styled.Buttons>
         <Button onClick={skip}>
@@ -77,7 +79,7 @@ export function Game({
                 (playTimes[currentTry + 1] - playTimes[currentTry]) / 1000
               }s`}
         </Button>
-        <Button variant="green" onClick={guess}>
+        <Button variant="green" onClick={guess} disabled={!selectedSong}>
           Guess
         </Button>
       </Styled.Buttons>

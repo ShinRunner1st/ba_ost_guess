@@ -8,7 +8,7 @@ export function searchSong(searchTerm: string): Song[] {
     .filter((song: Song) => {
       const songName = song.name.toLowerCase();
       const songArtist = song.artist.toLowerCase();
-      const fullName = songArtist + " " + songName;
+      const fullName = songArtist + " - " + songName;
       const themeNo = song.themeNo;
 
       if (fullName.includes(searchTerm) || themeNo.includes(searchTerm)) {

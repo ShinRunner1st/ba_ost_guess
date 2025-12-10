@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import "@fontsource-variable/nunito-sans";
 
+interface ResultProps {
+  $isFocused?: boolean;
+}
+
 export const Container = styled.div`
   font-family: "Nunito Sans Variable";
   position: relative;
@@ -66,11 +70,12 @@ export const ResultsContainer = styled.div`
   overflow-y: auto;
 `;
 
-export const Result = styled.div`
+export const Result = styled.div<ResultProps>`
   font-family: "Nunito Sans Variable";
   padding: 1px 15px;
 
-  background-color: ${({ theme }) => theme.background1};
+  background-color: ${({ theme, $isFocused }) => 
+    $isFocused ? theme.background100 : theme.background1};
 
   border-color: ${({ theme }) => theme.border};
   border-width: 1px;
