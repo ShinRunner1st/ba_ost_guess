@@ -61,6 +61,7 @@ export function Game({
           guess={guess}
           isCorrect={guess.isCorrect}
           active={index === currentTry}
+          todaysSolution={todaysSolution}
         />
       ))}
       <Player

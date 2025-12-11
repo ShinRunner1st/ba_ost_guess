@@ -1,7 +1,8 @@
 import React from "react";
-import { IoInformationCircleOutline, IoBarChart, IoHelpCircleOutline } from "react-icons/io5";
+import { IoInformationCircleOutline, IoBarChart, IoHelpCircleOutline, IoGameControllerOutline, IoBarChartOutline, IoInformationCircle, IoGameController } from "react-icons/io5";
 
 import * as Styled from "./index.styled";
+import img from "../../image/BlueArchive-Heardle.png";
 
 interface Props {
   openInfoPopUp: () => void;
@@ -14,20 +15,20 @@ export function Header({ openInfoPopUp, openStatsPopUp, openHowToPopUp }: Props)
     <Styled.Container>
       <Styled.Content>
         <div className="left-icons">
-          <IoInformationCircleOutline
+          <IoInformationCircle
             onClick={openInfoPopUp}
-            size={40}
+            size="1em"
           />
-          <IoHelpCircleOutline
+          <IoGameController
             onClick={openHowToPopUp}
-            size={40}
+            size="1em"
           />
         </div>
-        <Styled.Logo>Blue Archive OST</Styled.Logo>
+        <Styled.Logo src={img} alt="Blue Archive Heardle Logo" />
         <div className="right-icon">
           <IoBarChart
             onClick={openStatsPopUp}
-            size={30}
+            size="1em"
           />
         </div>
       </Styled.Content>

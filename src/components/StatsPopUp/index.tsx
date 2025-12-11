@@ -58,7 +58,7 @@ export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
   return (
     <Styled.Container>
       <Styled.PopUp>
-        <h1>Stats 📊</h1>
+        <h1 style={{margin:0}}>Stats 📊</h1>
         <Styled.Spacer />
         <div style={{ width: 300 }}>
           <Styled.Section>
@@ -93,10 +93,8 @@ export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
           </Styled.Section>
         </div>
         <Styled.Spacer />
-        <h3>
           <Styled.Section>Score : {correctRecent}</Styled.Section>
           <Styled.Section>Total OST : {songs.length}</Styled.Section>
-        </h3>
         <Styled.Spacer />
         <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>

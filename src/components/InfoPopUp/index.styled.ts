@@ -41,11 +41,18 @@ export const PopUp = styled.div`
   }
 
   width: 90%;
-  max-width: 500px;
-  @media (max-width: 768px) {
-    width: 80%;
-  }
+  max-width: 420px;
   padding: 20px;
+  
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 14px;
+  }
 
   background-color: ${({ theme }) => theme.background100};
 
@@ -62,13 +69,17 @@ export const PopUp = styled.div`
 `;
 
 export const Spacer = styled.div`
-  width: 70%;
+  width: 80%;
   height: 0.2px;
 
-  margin: 20px 0;
+  margin: 16px 0;
 
   background-color: ${({ theme }) => theme.text};
   opacity: 0.5;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 `;
 
 export const Section = styled.div`
@@ -79,6 +90,30 @@ export const Section = styled.div`
 
   a {
     color: ${({ theme }) => theme.text};
+  }
+
+  /* 📱 Mobile behavior */
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    gap: 6px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  /* 📱 Small phones → stack vertically */
+  @media (max-width: 480px) {
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    p, a {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -91,4 +126,8 @@ export const Contact = styled.p`
   font-size: 0.9rem;
   font-weight: bold;
   opacity: 0.5;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;

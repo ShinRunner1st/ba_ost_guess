@@ -12,6 +12,9 @@ export const Container = styled.div`
   width: 100%;
 
   margin-top: 5%;
+
+  @media (max-width: 768px) {
+  }
 `;
 
 export const SearchContainer = styled.div`
@@ -20,7 +23,11 @@ export const SearchContainer = styled.div`
   align-items: center;
 
   width: 100%;
-  height: 50px;
+  height: 45px;
+
+  @media (max-width: 768px) {
+    height: 36px;
+  }
 
   border-color: ${({ theme }) => theme.border};
   border-width: 1px;
@@ -58,8 +65,12 @@ export const Input = styled.input`
 export const ResultsContainer = styled.div`
   font-family: "Nunito Sans Variable";
   position: absolute;
-  bottom: 50px;
+  bottom: 47px;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    bottom: 38px;
+  }
 
   display: flex;
   flex-direction: column;
@@ -72,7 +83,13 @@ export const ResultsContainer = styled.div`
 
 export const Result = styled.div<ResultProps>`
   font-family: "Nunito Sans Variable";
-  padding: 1px 15px;
+  padding: 0px 15px;
+
+  height: 45px;
+
+  @media (max-width: 768px) {
+    height: 36px;
+  }
 
   display: flex;                  /* ✅ */
   align-items: center;            /* ✅ */

@@ -169,14 +169,12 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
           </Styled.TimeStamps>
           {!play ? (
             <Styled.PlayIcon
-              size={70}
               color="#fff"
               onClick={startPlayback}
             />
           ) : (
             <Styled.PauseIcon
               style={{ cursor: "pointer" }}
-              size={70}
               color="#fff"
               onClick={pasuePlayback}
             />

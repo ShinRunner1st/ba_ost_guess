@@ -41,11 +41,18 @@ export const PopUp = styled.div`
   }
 
   width: 90%;
-  max-width: 500px;
-  @media (max-width: 768px) {
-    width: 80%;
-  }
+  max-width: 420px;
   padding: 20px;
+  
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+    padding: 14px;
+  }
 
   background-color: ${({ theme }) => theme.background100};
 
@@ -62,13 +69,17 @@ export const PopUp = styled.div`
 `;
 
 export const Spacer = styled.div`
-  width: 70%;
+  width: 80%;
   height: 0.2px;
 
-  margin: 20px 0;
+  margin: 16px 0;
 
   background-color: ${({ theme }) => theme.text};
   opacity: 0.5;
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 `;
 
 export const Section = styled.div`
@@ -79,24 +90,36 @@ export const Section = styled.div`
   a {
     color: ${({ theme }) => theme.text};
   }
-  margin-top: 5%;
+  margin: 8px;
+  font-weight: bold;
+
+  @media (max-width: 480px) {
+    gap: 6px;
+    font-size: 0.9rem;
+    margin: 8px;
+  }
 `;
 
 export const Contact = styled.p`
   a {
     color: ${({ theme }) => theme.text};
   }
-  margin-top: 5%;
+  margin: 16px;
 
   font-size: 0.9rem;
   font-weight: bold;
   opacity: 0.5;
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const Progress = styled.div<{ value: number; maxValue: number; animate: boolean;}>`
   width: ${({ animate, value, maxValue }) =>
-    animate ? (value / maxValue) * 80 + "%" : "0%"};
-  height: 20px;
+    animate ? Math.sqrt(value / maxValue) * 80 + "%" : "0%"};
+  
+  height: 18px;
   align-self: flex-start;
   background-color: ${({ theme }) => theme.green};
   border-radius: 2px;
@@ -104,13 +127,6 @@ export const Progress = styled.div<{ value: number; maxValue: number; animate: b
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-export const BadProgress = styled.div<{ value: number; maxValue: number; animate: boolean;}>`
-  width: ${({ animate, value, maxValue }) =>
-    animate ? (value / maxValue) * 80 + "%" : "0%"};
-  height: 20px;
-  align-self: flex-start;
+export const BadProgress = styled(Progress)`
   background-color: ${({ theme }) => theme.red};
-  border-radius: 2px;
-
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 `;

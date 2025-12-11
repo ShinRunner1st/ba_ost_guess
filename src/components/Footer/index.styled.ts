@@ -13,6 +13,10 @@ export const Text = styled.p`
   justify-content: center;
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.background100};
+
+  svg {
+    vertical-align: -2px;
+  }
 `;
 
 export const Link = styled.a`

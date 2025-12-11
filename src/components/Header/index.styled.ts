@@ -39,28 +39,52 @@ export const Content = styled.div`
 
   .left-icons {
     display: flex;
-    gap: 0px;
+    gap: 6px;
     justify-self: start;
+    align-items: center;
+    font-size: 40px;
   }
 
   .right-icon {
     display: flex;
     align-items: center;
     justify-self: end;
+    align-items: center;
+    font-size: 34px;
+  }
+
+  @media (max-width: 768px) {
+    .left-icons {
+      display: flex;
+      gap: 6px;
+      justify-self: start;
+      align-items: center;
+      font-size: 32px;
+    }
+
+    .right-icon {
+      display: flex;
+      align-items: center;
+      justify-self: end;
+      align-items: center;
+      font-size: 26px;
+    }
   }
 `;
 
-export const Logo = styled.h1`
-  color: ${({ theme }) => theme.text};
-  font-family: "Nunito Sans Variable";
+export const Logo = styled.img`
+  height: 70px;
+  width: auto;
   justify-self: center;
-  white-space: nowrap;
-  font-size: 2em;
-
-  -webkit-touch-callout: none;
   user-select: none;
+  -webkit-touch-callout: none;
+
+  filter: 
+    drop-shadow(0 0 2px white)
+    drop-shadow(0 0 2px white)
+    drop-shadow(0 0 2px white);
 
   @media (max-width: 768px) {
-    font-size: 1.5em;
+    height: 60px;
   }
 `;

@@ -4,34 +4,37 @@ import "@fontsource-variable/nunito-sans";
 
 export const Container = styled.div`
   font-family: "Nunito Sans Variable";
+
   width: 40%;
-  height: 78vh;
-
-  @media (max-width: 768px) {
-    width: 90%;
-  }
-
   max-width: 600px;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  margin: 0 auto;
+  height: fit-content;
+  margin: auto;
+  padding: 20px 0;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 0 0;
+  }
 `;
 
 export const BG = styled.div`
   background-image: url(${img});
-  height: 100%;
-  position: absolute;
+
+  position: fixed;      /* Stays full-screen */
+  top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100vw;
+  height: 100vh;
+
   z-index: -10;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
 `;

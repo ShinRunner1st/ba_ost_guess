@@ -7,6 +7,11 @@ export const ProgressBackground = styled.div`
 
   width: 100%;
   height: 20px;
+
+  @media (max-width: 768px) {
+    height: 16px;
+  }
+
   background-color: ${({ theme }) => theme.gray};
   border-radius: 2px;
 
@@ -16,6 +21,10 @@ export const ProgressBackground = styled.div`
 export const Progress = styled.div<{ value: number }>`
   width: ${({ value }) => value * 6.25}%;
   height: 20px;
+  
+  @media (max-width: 768px) {
+    height: 16px;
+  }
 
   align-self: flex-start;
 
@@ -47,6 +56,7 @@ export const TimeStamps = styled.div`
 
 export const TimeStamp = styled.p`
   font-family: "Nunito Sans Variable";
+  font-size: 0.9rem;
   color: ${({ theme }) => theme.text};
 `;
 
@@ -68,6 +78,13 @@ export const Overlay = styled.div`
 export const PlayIcon = styled(IoPlayCircle)`
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
+  position: relative;
+  font-size: 70px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
 
   &:hover {
     transform: scale(1.08);
@@ -78,6 +95,13 @@ export const PlayIcon = styled(IoPlayCircle)`
 export const PauseIcon = styled(IoPauseCircle)`
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
+  position: relative;
+  font-size: 70px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
 
   &:hover {
     transform: scale(1.08);
