@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { GuessType } from "../../types/guess";
 import { Song } from "../../types/song";
@@ -39,6 +39,7 @@ export function Game({
   Stats,
   selectedSong,
 }: Props) {
+  const inputRef = useRef<HTMLInputElement>(null);
   if (didGuess || currentTry === 6) {
     return (
       <Result
@@ -69,8 +70,9 @@ export function Game({
         currentTry={currentTry}
         getStartTime={getStartTime}
         time={time}
+        inputRef={inputRef}
       />
-      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} selectedSong={selectedSong} />
+      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} selectedSong={selectedSong} inputRef={inputRef}/>
 
       <Styled.Buttons>
         <Button onClick={skip}>

@@ -10,14 +10,13 @@ interface Props {
   currentTry: number;
   setSelectedSong: React.Dispatch<React.SetStateAction<Song | undefined>>;
   selectedSong: Song | undefined;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export function Search({ currentTry, setSelectedSong, selectedSong }: Props) {
+export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: Props) {
   const [value, setValue] = React.useState<string>("");
   const [results, setResults] = React.useState<Song[]>([]);
   const [focusedIndex, setFocusedIndex] = React.useState<number>(-1);
-
-  const inputRef = useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     if (value == results[0]?.artist + " - " + results[0]?.name) {
@@ -71,6 +70,11 @@ export function Search({ currentTry, setSelectedSong, selectedSong }: Props) {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Escape") {
+      e.preventDefault();
+      handleClear();
+    }
+
     if (results.length === 0) return;
 
     if (e.key === "ArrowDown") {

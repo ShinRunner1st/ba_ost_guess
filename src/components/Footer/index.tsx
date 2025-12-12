@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <Styled.Text>
       Made with <IoHeart /> by{" "}
-        <Styled.Link href="https://github.com/ShinRunner1st/ba_ost_guess">
+        <Styled.Link tabIndex={-1} href="https://github.com/ShinRunner1st/ba_ost_guess">
           <IoLogoGithub />ShinRunner1st
         </Styled.Link>
     </Styled.Text>

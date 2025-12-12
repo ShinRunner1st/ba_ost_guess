@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import YouTube from "react-youtube";
 import { IoPauseCircle, IoPlayCircle } from "react-icons/io5";
 import { event } from "react-ga";
@@ -12,9 +12,10 @@ interface Props {
   currentTry: number;
   getStartTime: (time: number) => void;
   time: number;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export function Player({ id, currentTry, getStartTime, time }: Props) {
+export function Player({ id, currentTry, getStartTime, time, inputRef }: Props) {
   const opts = {
     width: "0", // Set width to 0
     height: "0", // Set height to 0
@@ -60,6 +61,26 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
     }
   }, [play, currentTime, startTime]);
 
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const active = document.activeElement;
+
+      // 🛑 If focused inside your input, DO NOT block or override space
+      if (active === inputRef.current) return;
+
+      if (e.code === "Space") {
+        e.preventDefault();
+        if (!play) startPlayback();
+        else pausePlayback();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [play]);
+
   // don't call play video each time currentTime changes
   const startPlayback = React.useCallback(() => {
     if (!play) {
@@ -72,7 +93,7 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
     }
   }, []);
 
-  const pasuePlayback = React.useCallback(() => {
+  const pausePlayback = React.useCallback(() => {
     if (play) {
       playerRef.current?.internalPlayer.pauseVideo();
       playerRef.current?.internalPlayer.seekTo(startTime);
@@ -111,6 +132,8 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
           }}
           videoId={id}
           onReady={(event) => {
+            const iframe = event.target.getIframe?.();
+            if (iframe) iframe.setAttribute("tabIndex", "-1");
             const duration = event.target.getDuration(); // Get video duration in seconds
             if (duration > 0) {
               const randomTime = Math.floor(
@@ -176,7 +199,7 @@ export function Player({ id, currentTry, getStartTime, time }: Props) {
             <Styled.PauseIcon
               style={{ cursor: "pointer" }}
               color="#fff"
-              onClick={pasuePlayback}
+              onClick={pausePlayback}
             />
           )}
         </>
