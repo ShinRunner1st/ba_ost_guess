@@ -1679,4 +1679,10 @@ export const songs = [
     youtubeId: "2wSqxOFSr6I",
     themeNo: "333",
   },
+  {
+    artist: "EmoCosine",
+    name: "Theme 318",
+    youtubeId: "nOjIwYsKEG0",
+    themeNo: "318",
+  },
 ];
