@@ -11,7 +11,7 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
-    
+
   position: absolute;
   top: 0;
   z-index: 2;
@@ -105,13 +105,13 @@ export const Section = styled.div`
 
   /* 📱 Small phones → stack vertically */
   @media (max-width: 480px) {
-
     svg {
       width: 22px;
       height: 22px;
     }
 
-    p, a {
+    p,
+    a {
       font-size: 0.9rem;
     }
   }

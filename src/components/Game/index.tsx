@@ -72,7 +72,12 @@ export function Game({
         time={time}
         inputRef={inputRef}
       />
-      <Search currentTry={currentTry} setSelectedSong={setSelectedSong} selectedSong={selectedSong} inputRef={inputRef}/>
+      <Search
+        currentTry={currentTry}
+        setSelectedSong={setSelectedSong}
+        selectedSong={selectedSong}
+        inputRef={inputRef}
+      />
 
       <Styled.Buttons>
         <Button onClick={skip}>

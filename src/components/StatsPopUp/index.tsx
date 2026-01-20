@@ -58,43 +58,76 @@ export function StatsPopUp({ onClose, correctRecent, Stats }: Props) {
   return (
     <Styled.Container>
       <Styled.PopUp>
-        <h1 style={{margin:0}}>Stats 📊</h1>
+        <h1 style={{ margin: 0 }}>Stats 📊</h1>
         <Styled.Spacer />
         <div style={{ width: 300 }}>
           <Styled.Section>
-            1 | <Styled.Progress animate={animate} value={Stats[1]} maxValue={Stats[7]} />
+            1 |{" "}
+            <Styled.Progress
+              animate={animate}
+              value={Stats[1]}
+              maxValue={Stats[7]}
+            />
             {v1}
           </Styled.Section>
           <Styled.Section>
-            2 | <Styled.Progress animate={animate} value={Stats[2]} maxValue={Stats[7]} />
+            2 |{" "}
+            <Styled.Progress
+              animate={animate}
+              value={Stats[2]}
+              maxValue={Stats[7]}
+            />
             {v2}
           </Styled.Section>
           <Styled.Section>
-            3 | <Styled.Progress animate={animate} value={Stats[3]} maxValue={Stats[7]} />
+            3 |{" "}
+            <Styled.Progress
+              animate={animate}
+              value={Stats[3]}
+              maxValue={Stats[7]}
+            />
             {v3}
           </Styled.Section>
           <Styled.Section>
-            4 | <Styled.Progress animate={animate} value={Stats[4]} maxValue={Stats[7]} />
+            4 |{" "}
+            <Styled.Progress
+              animate={animate}
+              value={Stats[4]}
+              maxValue={Stats[7]}
+            />
             {v4}
           </Styled.Section>
           <Styled.Section>
-            5 | <Styled.Progress animate={animate} value={Stats[5]} maxValue={Stats[7]} />
+            5 |{" "}
+            <Styled.Progress
+              animate={animate}
+              value={Stats[5]}
+              maxValue={Stats[7]}
+            />
             {v5}
           </Styled.Section>
           <Styled.Section>
             6 |
-            <Styled.Progress animate={animate} value={Stats[6]} maxValue={Stats[7]} />
+            <Styled.Progress
+              animate={animate}
+              value={Stats[6]}
+              maxValue={Stats[7]}
+            />
             {v6}
           </Styled.Section>
           <Styled.Section>
             X |
-            <Styled.BadProgress animate={animate} value={Stats[0]} maxValue={Stats[7]} />
+            <Styled.BadProgress
+              animate={animate}
+              value={Stats[0]}
+              maxValue={Stats[7]}
+            />
             {vX}
           </Styled.Section>
         </div>
         <Styled.Spacer />
-          <Styled.Section>Score : {correctRecent}</Styled.Section>
-          <Styled.Section>Total OST : {songs.length}</Styled.Section>
+        <Styled.Section>Score : {correctRecent}</Styled.Section>
+        <Styled.Section>Total OST : {songs.length}</Styled.Section>
         <Styled.Spacer />
         <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>

@@ -9,24 +9,19 @@ interface Props {
 
 export function HowToPopUp({ onClose }: Props) {
   return (
-  <Styled.Container>
+    <Styled.Container>
       <Styled.PopUp>
-        <h1 style={{margin:0}}>How To Guess❓</h1>
+        <h1 style={{ margin: 0 }}>How To Guess❓</h1>
         <Styled.Spacer />
-          <h3>Search for your OST and select your choice.</h3>
-          <Styled.Spacer />
-          <Styled.Text>
-          You can search using the options below, <br/>and your result will appear at the top.
-          </Styled.Text>
-          <Styled.TextB>
-          ● Search by Name
-          </Styled.TextB>
-          <Styled.TextB>
-          ● Search by Number of OSTs
-          </Styled.TextB>
-          <Styled.TextB>
-          ● Search by Artist
-          </Styled.TextB>
+        <h3>Search for your OST and select your choice.</h3>
+        <Styled.Spacer />
+        <Styled.Text>
+          You can search using the options below, <br />
+          and your result will appear at the top.
+        </Styled.Text>
+        <Styled.TextB>● Search by Name</Styled.TextB>
+        <Styled.TextB>● Search by Number of OSTs</Styled.TextB>
+        <Styled.TextB>● Search by Artist</Styled.TextB>
         <Styled.Section>
           <Button variant="green" style={{ marginTop: 20 }} onClick={onClose}>
             Close

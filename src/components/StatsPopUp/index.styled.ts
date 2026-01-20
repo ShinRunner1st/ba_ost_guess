@@ -43,7 +43,7 @@ export const PopUp = styled.div`
   width: 90%;
   max-width: 420px;
   padding: 20px;
-  
+
   @media (max-width: 768px) {
     width: 90%;
     padding: 16px;
@@ -115,10 +115,14 @@ export const Contact = styled.p`
   }
 `;
 
-export const Progress = styled.div<{ value: number; maxValue: number; animate: boolean;}>`
+export const Progress = styled.div<{
+  value: number;
+  maxValue: number;
+  animate: boolean;
+}>`
   width: ${({ animate, value, maxValue }) =>
     animate ? Math.sqrt(value / maxValue) * 80 + "%" : "0%"};
-  
+
   height: 18px;
   align-self: flex-start;
   background-color: ${({ theme }) => theme.green};

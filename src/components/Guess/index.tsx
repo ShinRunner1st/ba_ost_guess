@@ -24,10 +24,10 @@ export function Guess({ guess, isCorrect, active, todaysSolution }: Props) {
     const diff = songThemeNo - todayThemeNo;
 
     return {
-      inRange: Math.abs(diff) <= 10,   // within ±10
-      higher: diff > 0,               // song is higher
-      lower: diff < 0,                // song is lower
-      equal: diff === 0               // exact match
+      inRange: Math.abs(diff) <= 10, // within ±10
+      higher: diff > 0, // song is higher
+      lower: diff < 0, // song is lower
+      equal: diff === 0, // exact match
     };
   }
 
@@ -35,7 +35,10 @@ export function Guess({ guess, isCorrect, active, todaysSolution }: Props) {
     if (song) {
       setText(`${song.artist} - ${song.name}`);
       setthemeNo(`[Theme ${song.themeNo}]`);
-      const hint = checkHint(Number(song.themeNo), Number(todaysSolution.themeNo));
+      const hint = checkHint(
+        Number(song.themeNo),
+        Number(todaysSolution.themeNo)
+      );
       setDiff(hint.inRange);
       setDiffH(hint.higher);
       setDiffL(hint.lower);
@@ -49,7 +52,9 @@ export function Guess({ guess, isCorrect, active, todaysSolution }: Props) {
   return (
     <Styled.Container active={active} isCorrect={isCorrect} closeHint={diff}>
       <Styled.Text>{text}</Styled.Text>
-      <Styled.ThemeNo>{themeNo} {diffH && '↓'} {diffL && '↑'}</Styled.ThemeNo>
+      <Styled.ThemeNo>
+        {themeNo} {diffH && "↓"} {diffL && "↑"}
+      </Styled.ThemeNo>
     </Styled.Container>
   );
 }

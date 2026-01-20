@@ -26,7 +26,7 @@ export const Container = styled.div`
 export const BG = styled.div`
   background-image: url(${img});
 
-  position: fixed;      /* Stays full-screen */
+  position: fixed; /* Stays full-screen */
   top: 0;
   left: 0;
   width: 100vw;

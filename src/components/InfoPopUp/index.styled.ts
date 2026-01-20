@@ -43,7 +43,7 @@ export const PopUp = styled.div`
   width: 90%;
   max-width: 420px;
   padding: 20px;
-  
+
   @media (max-width: 768px) {
     width: 90%;
     padding: 16px;
@@ -105,13 +105,13 @@ export const Section = styled.div`
 
   /* 📱 Small phones → stack vertically */
   @media (max-width: 480px) {
-
     svg {
       width: 22px;
       height: 22px;
     }
 
-    p, a {
+    p,
+    a {
       font-size: 0.9rem;
     }
   }

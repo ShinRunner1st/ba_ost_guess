@@ -21,7 +21,7 @@ export const ProgressBackground = styled.div`
 export const Progress = styled.div<{ value: number }>`
   width: ${({ value }) => value * 6.25}%;
   height: 20px;
-  
+
   @media (max-width: 768px) {
     height: 16px;
   }

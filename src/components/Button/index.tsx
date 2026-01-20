@@ -13,7 +13,12 @@ interface Props {
 
 export function Button({ onClick, style, variant, children, disabled }: Props) {
   return (
-    <Styled.Button onClick={onClick} variant={variant} style={style} disabled={disabled}>
+    <Styled.Button
+      onClick={onClick}
+      variant={variant}
+      style={style}
+      disabled={disabled}
+    >
       {children}
     </Styled.Button>
   );

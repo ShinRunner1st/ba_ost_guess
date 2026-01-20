@@ -79,9 +79,7 @@ export const Logo = styled.img`
   user-select: none;
   -webkit-touch-callout: none;
 
-  filter: 
-    drop-shadow(0 0 2px white)
-    drop-shadow(0 0 2px white)
+  filter: drop-shadow(0 0 2px white) drop-shadow(0 0 2px white)
     drop-shadow(0 0 2px white);
 
   @media (max-width: 768px) {

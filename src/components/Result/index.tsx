@@ -29,7 +29,7 @@ export function Result({
   correctRecent,
   totalsGuesses,
   time,
-  Stats
+  Stats,
 }: Props) {
   // const hoursToNextDay = Math.floor(
   //   (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
@@ -40,13 +40,13 @@ export function Result({
   // );
   const [buttonText, setButtonText] = useState("Copy Score");
   const textForTry = [
-  "EH?! FIRST TRY?! 😮",
-  "Sensei is strong today 💪",
-  "Not bad at all~ 👀",
-  "Okay, getting intense 😤",
-  "THAT WAS TOO CLOSE 😭",
-  "WE SURVIVED, SENSEI 😭💥"
-];
+    "EH?! FIRST TRY?! 😮",
+    "Sensei is strong today 💪",
+    "Not bad at all~ 👀",
+    "Okay, getting intense 😤",
+    "THAT WAS TOO CLOSE 😭",
+    "WE SURVIVED, SENSEI 😭💥",
+  ];
 
   const copyResult = React.useCallback(() => {
     navigator.clipboard.writeText(scoreToEmoji(guesses, correctRecent, Stats));
@@ -57,21 +57,21 @@ export function Result({
   }, [guesses, correctRecent]);
 
   React.useEffect(() => {
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === "Enter" && didGuess) {
-          e.preventDefault(); // Prevents accidental form submissions
-          selectRandomElement(time);
-          window.location.reload();
-        }
-      };
-  
-      window.addEventListener("keydown", handleKeyDown);
-  
-      // Cleanup: Remove listener when component unmounts or dependencies change
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-      };
-    }, [didGuess]);
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Enter" && didGuess) {
+        e.preventDefault(); // Prevents accidental form submissions
+        selectRandomElement(time);
+        window.location.reload();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup: Remove listener when component unmounts or dependencies change
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [didGuess]);
 
   if (didGuess) {
     const triesConjugation = currentTry === 1 ? "guess" : "guesses";
@@ -116,7 +116,8 @@ export function Result({
       <>
         <Styled.FailResultTitle>Mission Failed… 💔</Styled.FailResultTitle>
         <Styled.Tries>
-          {songs.length == totalsGuesses && "This is last song and"} Sensei needs more training 😭
+          {songs.length == totalsGuesses && "This is last song and"} Sensei
+          needs more training 😭
         </Styled.Tries>
         <Styled.Score>Score : {correctRecent}</Styled.Score>
         <Styled.SongTitle>

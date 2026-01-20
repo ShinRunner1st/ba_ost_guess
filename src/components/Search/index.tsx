@@ -13,7 +13,12 @@ interface Props {
   inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: Props) {
+export function Search({
+  currentTry,
+  setSelectedSong,
+  selectedSong,
+  inputRef,
+}: Props) {
   const [value, setValue] = React.useState<string>("");
   const [results, setResults] = React.useState<Song[]>([]);
   const [focusedIndex, setFocusedIndex] = React.useState<number>(-1);
@@ -23,11 +28,17 @@ export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: 
       setSelectedSong(results[0]);
       setResults([]);
       setFocusedIndex(-1);
-    } else if (selectedSong && value !== `${selectedSong.artist} - ${selectedSong.name}`) {
+    } else if (
+      selectedSong &&
+      value !== `${selectedSong.artist} - ${selectedSong.name}`
+    ) {
       setResults(searchSong(value));
       setSelectedSong(undefined);
       setFocusedIndex(-1);
-    } else if (selectedSong && value == `${selectedSong.artist} - ${selectedSong.name}`) {
+    } else if (
+      selectedSong &&
+      value == `${selectedSong.artist} - ${selectedSong.name}`
+    ) {
       setResults([]);
       setFocusedIndex(-1);
     } else if (value) {
@@ -54,7 +65,7 @@ export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: 
     setResults([]);
     setFocusedIndex(-1);
     inputRef.current?.focus();
-    
+
     event({
       category: "Player",
       action: "Chose song",
@@ -81,7 +92,7 @@ export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: 
       e.preventDefault();
       setFocusedIndex((prev) => {
         // If at the bottom, loop back to the Search Input (-1)
-        if (prev === results.length - 1) return 0; 
+        if (prev === results.length - 1) return 0;
         return prev + 1;
       });
     } else if (e.key === "ArrowUp") {
@@ -118,7 +129,8 @@ export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: 
               {song.artist} - {song.name}
             </Styled.ResultText>
             <Styled.ThemeNo>
-              {song.name !== `Theme ${song.themeNo}` && ` [Theme ${song.themeNo}]`}
+              {song.name !== `Theme ${song.themeNo}` &&
+                ` [Theme ${song.themeNo}]`}
             </Styled.ThemeNo>
           </Styled.Result>
         ))}
@@ -134,8 +146,8 @@ export function Search({ currentTry, setSelectedSong, selectedSong, inputRef }: 
             value={value}
           />
           {value && (
-            <IoCloseCircleOutline 
-              size={20} 
+            <IoCloseCircleOutline
+              size={20}
               onClick={handleClear}
               style={{ cursor: "pointer", marginLeft: "8px" }}
             />

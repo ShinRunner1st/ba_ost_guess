@@ -91,11 +91,11 @@ export const Result = styled.div<ResultProps>`
     height: 36px;
   }
 
-  display: flex;                  /* ✅ */
-  align-items: center;            /* ✅ */
+  display: flex; /* ✅ */
+  align-items: center; /* ✅ */
   justify-content: space-between; /* ✅ */
 
-  background-color: ${({ theme, $isFocused }) => 
+  background-color: ${({ theme, $isFocused }) =>
     $isFocused ? theme.background100 : theme.background1};
 
   border-color: ${({ theme }) => theme.border};

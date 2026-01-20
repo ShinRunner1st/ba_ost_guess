@@ -8,7 +8,14 @@ import { GuessType } from "./types/guess";
 
 import { todaysSolution, calRecentCorrect, calStats } from "./helpers";
 
-import { Header, InfoPopUp, Game, Footer, StatsPopUp, HowToPopUp } from "./components";
+import {
+  Header,
+  InfoPopUp,
+  Game,
+  Footer,
+  StatsPopUp,
+  HowToPopUp,
+} from "./components";
 
 import * as Styled from "./app.styled";
 
@@ -200,7 +207,11 @@ function App() {
 
   return (
     <Styled.BG>
-      <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp} openHowToPopUp={openHowToPopUp}/>
+      <Header
+        openInfoPopUp={openInfoPopUp}
+        openStatsPopUp={openStatsPopUp}
+        openHowToPopUp={openHowToPopUp}
+      />
       {isStatsPopUpOpen && (
         <StatsPopUp
           onClose={closeStatsPopUp}

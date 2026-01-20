@@ -15,7 +15,13 @@ interface Props {
   inputRef: React.RefObject<HTMLInputElement>;
 }
 
-export function Player({ id, currentTry, getStartTime, time, inputRef }: Props) {
+export function Player({
+  id,
+  currentTry,
+  getStartTime,
+  time,
+  inputRef,
+}: Props) {
   const opts = {
     width: "0", // Set width to 0
     height: "0", // Set height to 0
@@ -191,10 +197,7 @@ export function Player({ id, currentTry, getStartTime, time, inputRef }: Props) 
             <Styled.TimeStamp>16s</Styled.TimeStamp>
           </Styled.TimeStamps>
           {!play ? (
-            <Styled.PlayIcon
-              color="#fff"
-              onClick={startPlayback}
-            />
+            <Styled.PlayIcon color="#fff" onClick={startPlayback} />
           ) : (
             <Styled.PauseIcon
               style={{ cursor: "pointer" }}

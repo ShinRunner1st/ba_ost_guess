@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  IoMusicalNotes,
-  IoHelpCircleOutline,
-  IoCafe,
-} from "react-icons/io5";
+import { IoMusicalNotes, IoHelpCircleOutline, IoCafe } from "react-icons/io5";
 import { Button } from "..";
 
 import * as Styled from "./index.styled";
@@ -17,7 +13,7 @@ export function InfoPopUp({ onClose }: Props) {
   return (
     <Styled.Container>
       <Styled.PopUp>
-        <h1 style={{margin:0}}>Welcome 👋</h1>
+        <h1 style={{ margin: 0 }}>Welcome 👋</h1>
         <Styled.Spacer />
         <Styled.Section>
           <IoMusicalNotes size={30} />

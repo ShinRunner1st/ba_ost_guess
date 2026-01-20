@@ -3,7 +3,7 @@ import { GuessType } from "../types/guess";
 export function scoreToEmoji(
   guesses: GuessType[],
   correctRecent: string,
-  Stats: number[],
+  Stats: number[]
 ): string {
   const emojis = {
     incorrect: "🟥",
@@ -34,13 +34,40 @@ export function scoreToEmoji(
   const total = Stats[7];
   const guessIn =
     "Guessed in\n" +
-    "1: " + percentToGreenBlocks(Stats[1], total) + " " + Stats[1] + "\n" +
-    "2: " + percentToGreenBlocks(Stats[2], total) + " " + Stats[2] + "\n" +
-    "3: " + percentToGreenBlocks(Stats[3], total) + " " + Stats[3] + "\n" +
-    "4: " + percentToGreenBlocks(Stats[4], total) + " " + Stats[4] + "\n" +
-    "5: " + percentToGreenBlocks(Stats[5], total) + " " + Stats[5] + "\n" +
-    "6: " + percentToGreenBlocks(Stats[6], total) + " " + Stats[6] + "\n" +
-    "X: " + redBlocks(Stats[0], total) + " " + Stats[0];
+    "1: " +
+    percentToGreenBlocks(Stats[1], total) +
+    " " +
+    Stats[1] +
+    "\n" +
+    "2: " +
+    percentToGreenBlocks(Stats[2], total) +
+    " " +
+    Stats[2] +
+    "\n" +
+    "3: " +
+    percentToGreenBlocks(Stats[3], total) +
+    " " +
+    Stats[3] +
+    "\n" +
+    "4: " +
+    percentToGreenBlocks(Stats[4], total) +
+    " " +
+    Stats[4] +
+    "\n" +
+    "5: " +
+    percentToGreenBlocks(Stats[5], total) +
+    " " +
+    Stats[5] +
+    "\n" +
+    "6: " +
+    percentToGreenBlocks(Stats[6], total) +
+    " " +
+    Stats[6] +
+    "\n" +
+    "X: " +
+    redBlocks(Stats[0], total) +
+    " " +
+    Stats[0];
 
   let scoreEmoji = "";
 
