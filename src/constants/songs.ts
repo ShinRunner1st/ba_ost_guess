@@ -1033,7 +1033,7 @@ export const songs = [
   },
   {
     artist: "Mitsukiyo",
-    name: "Theme 186",
+    name: "Starry Night",
     youtubeId: "W5wBb1TSouk",
     themeNo: "186",
   },
@@ -1104,8 +1104,8 @@ export const songs = [
     themeNo: "187",
   },
   {
-    artist: "Mitsukiyo",
-    name: "Theme 198",
+    artist: "Airuei",
+    name: "It Takes Two To Tiramisu",
     youtubeId: "ON7KdNjMP0w",
     themeNo: "198",
   },
@@ -1158,14 +1158,14 @@ export const songs = [
     themeNo: "222",
   },
   {
-    artist: "Unknown",
-    name: "Theme 215",
+    artist: "Nor",
+    name: "Starry Sky",
     youtubeId: "5PQ3QeeLGaE",
     themeNo: "215",
   },
   {
-    artist: "Unknown",
-    name: "Theme 210",
+    artist: "KARUT",
+    name: "Bishoujo tachi no Cliché",
     youtubeId: "l2hQSeyfeIU",
     themeNo: "210",
   },
@@ -1176,14 +1176,14 @@ export const songs = [
     themeNo: "180",
   },
   {
-    artist: "Unknown",
-    name: "Theme 214",
+    artist: "KARUT",
+    name: "OHAYOU Daily morning",
     youtubeId: "KfJmn9lBgUE",
     themeNo: "214",
   },
   {
     artist: "KARUT",
-    name: "Theme 202",
+    name: "Metal † Crisis",
     youtubeId: "lu0a5pj8rUg",
     themeNo: "202",
   },
@@ -1237,7 +1237,7 @@ export const songs = [
   },
   {
     artist: "EmoCosine",
-    name: "Theme 237",
+    name: "Peaceful Day",
     youtubeId: "LTroMAnQXkQ",
     themeNo: "237",
   },
@@ -1280,7 +1280,7 @@ export const songs = [
   {
     artist: "Unknown",
     name: "Theme 153",
-    youtubeId: "Qf-eMMd6Fz8",
+    youtubeId: "aZJgzb7AC24",
     themeNo: "153",
   },
   {
@@ -1320,8 +1320,8 @@ export const songs = [
     themeNo: "185",
   },
   {
-    artist: "Unknown",
-    name: "Theme 239",
+    artist: "Mitsukiyo",
+    name: "NekoTime",
     youtubeId: "5g7HJsxBNZo",
     themeNo: "239",
   },
@@ -1356,8 +1356,8 @@ export const songs = [
     themeNo: "255",
   },
   {
-    artist: "Unknown",
-    name: "Theme 256",
+    artist: "KARUT",
+    name: "The Loop of Life",
     youtubeId: "iZKn56LY3NM",
     themeNo: "256",
   },
@@ -1392,14 +1392,14 @@ export const songs = [
     themeNo: "247",
   },
   {
-    artist: "Unknown",
-    name: "Theme 252",
+    artist: "Mitsukiyo",
+    name: "Playful Maniac",
     youtubeId: "5LgvokZKhV0",
     themeNo: "252",
   },
   {
-    artist: "Unknown",
-    name: "Theme 257",
+    artist: "Aiobahn",
+    name: "Funk 4 Dummies",
     youtubeId: "-vz7KqCwNOI",
     themeNo: "257",
   },
@@ -1423,15 +1423,9 @@ export const songs = [
   },
   {
     artist: "EmoCosine",
-    name: "Theme 244",
+    name: "Sunset Memory",
     youtubeId: "Qy7GQxaUEyw",
     themeNo: "244",
-  },
-  {
-    artist: "EmoCosine",
-    name: "Theme 262",
-    youtubeId: "7o1SDIRwovw",
-    themeNo: "262",
   },
   {
     artist: "EmoCosine",
@@ -1524,8 +1518,8 @@ export const songs = [
     themeNo: "243",
   },
   {
-    artist: "Unknown",
-    name: "Theme 249",
+    artist: "Mitsukiyo",
+    name: "Music for Your Soul",
     youtubeId: "rI2McfptXko",
     themeNo: "249",
   },
@@ -1542,8 +1536,8 @@ export const songs = [
     themeNo: "281",
   },
   {
-    artist: "Unknown",
-    name: "Theme 283",
+    artist: "Mitsukiyo",
+    name: "4You (Harmonica Arrange)",
     youtubeId: "Vwpp-OpajG4",
     themeNo: "283",
   },
@@ -1606,12 +1600,6 @@ export const songs = [
     name: "Theme 300",
     youtubeId: "oDIazvE-kzQ",
     themeNo: "300",
-  },
-  {
-    artist: "Unknown",
-    name: "Theme 251",
-    youtubeId: "5xNXGCnC-bo",
-    themeNo: "251",
   },
   {
     artist: "Unknown",
@@ -1684,5 +1672,35 @@ export const songs = [
     name: "Theme 318",
     youtubeId: "nOjIwYsKEG0",
     themeNo: "318",
+  },
+  {
+    artist: "KARUT",
+    name: "The Runaway Until You Die",
+    youtubeId: "uhcM8OzzoWQ",
+    themeNo: "251",
+  },
+  {
+    artist: "EmoCosine",
+    name: "Odekake",
+    youtubeId: "w_s95D1rS3Y",
+    themeNo: "262",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 330",
+    youtubeId: "LTajh-MEEPw",
+    themeNo: "330",
+  },
+  {
+    artist: "Unknown",
+    name: "Theme 331",
+    youtubeId: "oRvaoiqXQqE",
+    themeNo: "331",
+  },
+  {
+    artist: "KARUT",
+    name: "Theme 227",
+    youtubeId: "1Jg2vpoWUMM",
+    themeNo: "227",
   },
 ];
