@@ -60,7 +60,7 @@ export function Result({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Enter" && didGuess) {
         e.preventDefault(); // Prevents accidental form submissions
-        selectRandomElement(time);
+        selectRandomElement();
         window.location.reload();
       }
     };
@@ -96,7 +96,7 @@ export function Result({
           </Button>
           <Button
             onClick={() => {
-              selectRandomElement(time);
+              selectRandomElement();
               window.location.reload();
             }}
             variant={songs.length === totalsGuesses ? "red" : "green"}
@@ -130,7 +130,7 @@ export function Result({
           </Button>
           <Button
             onClick={() => {
-              selectRandomElement(time);
+              selectRandomElement();
               window.location.reload();
             }}
             variant={songs.length === totalsGuesses ? "red" : "green"}
