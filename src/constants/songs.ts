@@ -1669,7 +1669,7 @@ export const songs = [
   },
   {
     artist: "EmoCosine",
-    name: "Theme 318",
+    name: "Run Way My Way",
     youtubeId: "nOjIwYsKEG0",
     themeNo: "318",
   },
