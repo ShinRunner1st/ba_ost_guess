@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { event } from "react-ga";
 import { IoSearch, IoCloseCircleOutline } from "react-icons/io5";
 import { searchSong } from "../../helpers";

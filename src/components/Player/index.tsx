@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import YouTube from "react-youtube";
-import { IoPauseCircle, IoPlayCircle } from "react-icons/io5";
 import { event } from "react-ga";
 
 import { playTimes } from "../../constants";
@@ -22,15 +21,15 @@ export function Player({
   time,
   inputRef,
 }: Props) {
-  const opts = {
-    width: "0", // Set width to 0
-    height: "0", // Set height to 0
-    playerVars: {
-      controls: 0, // Hide the controls
-      modestbranding: 1, // Minimize branding
-      rel: 0, // Disable related videos
-    },
-  };
+  // const opts = {
+  //   width: "0", // Set width to 0
+  //   height: "0", // Set height to 0
+  //   playerVars: {
+  //     controls: 0, // Hide the controls
+  //     modestbranding: 1, // Minimize branding
+  //     rel: 0, // Disable related videos
+  //   },
+  // };
 
   // react-youtube doesn't export types for this
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

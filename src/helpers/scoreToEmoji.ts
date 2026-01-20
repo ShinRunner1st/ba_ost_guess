@@ -5,12 +5,12 @@ export function scoreToEmoji(
   correctRecent: string,
   Stats: number[]
 ): string {
-  const emojis = {
-    incorrect: "🟥",
-    correct: "🟩",
-    skip: "⬜",
-    empty: "⬛️",
-  };
+  // const emojis = {
+  //   incorrect: "🟥",
+  //   correct: "🟩",
+  //   skip: "⬜",
+  //   empty: "⬛️",
+  // };
   const todaysDate = new Date();
   const prefix = `Blue Archive Heardle - ${todaysDate.toLocaleDateString()}`;
   const urlLink = "https://bluearchive-heardle.xyz/";
@@ -69,19 +69,19 @@ export function scoreToEmoji(
     " " +
     Stats[0];
 
-  let scoreEmoji = "";
+  // let scoreEmoji = "";
 
-  guesses.forEach((guess: GuessType) => {
-    if (guess.isCorrect === true) {
-      scoreEmoji += emojis.correct;
-    } else if (guess.skipped === true) {
-      scoreEmoji += emojis.skip;
-    } else if (guess.isCorrect === false) {
-      scoreEmoji += emojis.incorrect;
-    } else {
-      scoreEmoji += emojis.empty;
-    }
-  });
+  // guesses.forEach((guess: GuessType) => {
+  //   if (guess.isCorrect === true) {
+  //     scoreEmoji += emojis.correct;
+  //   } else if (guess.skipped === true) {
+  //     scoreEmoji += emojis.skip;
+  //   } else if (guess.isCorrect === false) {
+  //     scoreEmoji += emojis.incorrect;
+  //   } else {
+  //     scoreEmoji += emojis.empty;
+  //   }
+  // });
 
   //return `${prefix}\nScore : ${scoreStats}\n🎧${scoreEmoji}\n${urlLink}`;
   //return `${prefix}\nScore : ${scoreStats}\n🎧${urlLink}`;

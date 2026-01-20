@@ -1,10 +1,6 @@
 import React from "react";
 import {
-  IoInformationCircleOutline,
   IoBarChart,
-  IoHelpCircleOutline,
-  IoGameControllerOutline,
-  IoBarChartOutline,
   IoInformationCircle,
   IoGameController,
 } from "react-icons/io5";
